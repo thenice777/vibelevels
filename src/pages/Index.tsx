@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/Layout";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
@@ -77,7 +76,7 @@ const Index = () => {
           <CourseCard 
             key={courses[0].title}
             {...courses[0]}
-            onClick={() => navigate("/quiz")}
+            onClick={() => navigate("/unit1")}
           />
           {/* Other cards are locked or hidden */}
         </div>
