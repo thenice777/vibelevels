@@ -1,10 +1,13 @@
 
-import { Navigation } from "@/components/Navigation";
+import { Layout } from "@/components/Layout";
 import { CourseCard } from "@/components/CourseCard";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { ChevronRight, ArrowRight } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const courses = [
     {
       title: "web dev pitfalls",
@@ -33,50 +36,89 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            vibelevels
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-24 md:py-32 relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            <span className="text-primary">vibe</span>levels
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            go from 0 to 1 fast with vibelevels - your launchpad for web development.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            go from 0 to 1 fast with vibelevels — your launchpad for modern web development
           </p>
-        </section>
-
-        {/* Courses Section */}
-        <section className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            top courses
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.map((course) => (
-              <CourseCard key={course.title} {...course} />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-              browse all courses →
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-white font-medium px-6"
+              onClick={() => navigate('/courses')}
+            >
+              browse courses <ChevronRight className="ml-1 h-4 w-4" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-primary text-primary hover:bg-primary/10 font-medium px-6" 
+              onClick={() => navigate('/dashboard')}
+            >
+              explore dashboard
             </Button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="container mx-auto px-4 py-20 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            ready to level up your skills?
+      {/* Courses Section */}
+      <section className="container mx-auto px-4 py-20 md:py-24">
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-3xl font-bold text-white">
+            top courses
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            join thousands of developers who are mastering web development through our gamified learning platform.
-          </p>
-        </section>
-      </main>
+          <Button 
+            variant="outline" 
+            className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary"
+            onClick={() => navigate('/courses')}
+          >
+            view all <ArrowRight className="ml-1 h-4 w-4" />
+          </Button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {courses.map((course, index) => (
+            <CourseCard 
+              key={course.title}
+              {...course}
+              onClick={() => navigate(`/courses/${course.title.replace(/\s+/g, '-')}`)}
+            />
+          ))}
+        </div>
+      </section>
 
-      <Footer />
-    </div>
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 py-20 md:py-24">
+        <div className="bg-secondary/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 md:p-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+              ready to level up your skills?
+            </h2>
+            <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+              join thousands of developers who are mastering web development through our gamified learning platform.
+            </p>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white font-medium px-8"
+              onClick={() => navigate('/courses')}
+            >
+              get started now <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
