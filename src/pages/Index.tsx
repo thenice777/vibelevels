@@ -8,27 +8,12 @@ import { ChevronRight, ArrowRight } from "lucide-react";
 const Index = () => {
   const navigate = useNavigate();
   
+  // Only show the first course (lock others)
   const courses = [
     {
-      title: "web dev pitfalls",
-      description: "learn common mistakes to avoid in web development projects with practical advice and real-world examples.",
+      title: "Vibe Coding Basics",
+      description: "Learn the foundations of vibe coding: what it is, its benefits, and best practices for collaborating with AI tools.",
       level: "beginner friendly",
-      steps: 5,
-      medals: 5,
-      certificates: 1,
-    },
-    {
-      title: "project architecture",
-      description: "master the art of structuring web projects from the ground up with step-by-step guidance on essential components.",
-      level: "intermediate",
-      steps: 5,
-      medals: 5,
-      certificates: 1,
-    },
-    {
-      title: "ai dev tools",
-      description: "compare ai assistants like copilot with complete development environments like v0 and lovable.",
-      level: "advanced",
       steps: 5,
       medals: 5,
       certificates: 1,
@@ -88,13 +73,13 @@ const Index = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <CourseCard 
-              key={course.title}
-              {...course}
-              onClick={() => navigate(`/courses/${course.title.replace(/\s+/g, '-')}`)}
-            />
-          ))}
+          {/* Only the first course card is active; button launches quiz */}
+          <CourseCard 
+            key={courses[0].title}
+            {...courses[0]}
+            onClick={() => navigate("/quiz")}
+          />
+          {/* Other cards are locked or hidden */}
         </div>
       </section>
 
