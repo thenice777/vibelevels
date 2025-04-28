@@ -17,6 +17,17 @@ import Community from "./pages/Community";
 import Dashboard from "./pages/Dashboard";
 import Achievements from "./pages/Achievements";
 
+// FAQ Pages
+import FAQ from "./pages/FAQ";
+import GetUsableCode from "./pages/faq/GetUsableCode";
+import PreservingWorkingCode from "./pages/faq/PreservingWorkingCode";
+import MaintainingContext from "./pages/faq/MaintainingContext";
+import SimplifyingOverengineeredCode from "./pages/faq/SimplifyingOverengineeredCode";
+import DebuggingAIGeneratedCode from "./pages/faq/DebuggingAIGeneratedCode";
+import SecurityBestPractices from "./pages/faq/SecurityBestPractices";
+import HandlingInconsistentOutputs from "./pages/faq/HandlingInconsistentOutputs";
+import GeneratingEffectiveTests from "./pages/faq/GeneratingEffectiveTests";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,6 +48,18 @@ const App = () => (
           <Route path="/community" element={<Community />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/achievements" element={<Achievements />} />
+          
+          {/* FAQ Routes */}
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/faq/getting-usable-code-faster" element={<GetUsableCode />} />
+          <Route path="/faq/preserving-working-code" element={<PreservingWorkingCode />} />
+          <Route path="/faq/maintaining-context" element={<MaintainingContext />} />
+          <Route path="/faq/simplifying-overengineered-code" element={<SimplifyingOverengineeredCode />} />
+          <Route path="/faq/debugging-ai-generated-code" element={<DebuggingAIGeneratedCode />} />
+          <Route path="/faq/security-best-practices" element={<SecurityBestPractices />} />
+          <Route path="/faq/handling-inconsistent-outputs" element={<HandlingInconsistentOutputs />} />
+          <Route path="/faq/generating-effective-tests" element={<GeneratingEffectiveTests />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
