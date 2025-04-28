@@ -19,3 +19,71 @@ body {
 .text-gradient {
   @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
 }
+
+/* Fix code blocks in FAQ pages */
+.prose pre {
+  @apply overflow-x-auto;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prose pre code {
+  width: 100%;
+  display: block;
+}
+
+.prose code {
+  @apply text-sm;
+  word-break: break-word;
+}
+
+.prose p {
+  @apply text-base leading-relaxed my-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-gradient;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-3 text-primary;
+}
+
+.prose ul, .prose ol {
+  @apply pl-6 my-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary/80 underline underline-offset-2;
+}
+
+/* Improve code block appearance */
+.bg-muted {
+  @apply rounded-lg;
+  margin: 1.5rem 0;
+}
+
+.prose .bg-muted pre {
+  @apply border border-white/10 py-4 px-4 text-sm;
+  background-color: rgba(42, 47, 60, 0.8);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.prose .bg-muted code {
+  @apply text-xs sm:text-sm font-mono text-white/90;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .prose pre {
+    margin: 1rem -1rem;
+    border-radius: 0;
+  }
+}
