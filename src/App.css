@@ -20,24 +20,7 @@ body {
   @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
 }
 
-/* Fix code blocks in FAQ pages */
-.prose pre {
-  @apply overflow-x-auto;
-  max-width: 100%;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.prose pre code {
-  width: 100%;
-  display: block;
-}
-
-.prose code {
-  @apply text-sm;
-  word-break: break-word;
-}
-
+/* FAQ Typography and Content Styling */
 .prose p {
   @apply text-base leading-relaxed my-4;
 }
@@ -62,28 +45,48 @@ body {
   @apply text-primary hover:text-primary/80 underline underline-offset-2;
 }
 
-/* Improve code block appearance */
+/* Code Block Fixes */
+.prose pre {
+  @apply my-4 rounded-md;
+  overflow-x: auto;
+}
+
+.prose code {
+  @apply text-sm font-mono;
+}
+
+/* Specific Code Block Styling - Focus on fixing overflow issues */
 .bg-muted {
-  @apply rounded-lg;
-  margin: 1.5rem 0;
+  @apply rounded-lg my-6;
+  width: 100%;
+  position: relative;
 }
 
 .prose .bg-muted pre {
-  @apply border border-white/10 py-4 px-4 text-sm;
+  @apply p-4 rounded-md border border-white/10;
   background-color: rgba(42, 47, 60, 0.8);
+  width: 100%;
+  margin: 0;
   overflow-x: auto;
-  max-width: 100%;
 }
 
 .prose .bg-muted code {
-  @apply text-xs sm:text-sm font-mono text-white/90;
+  @apply text-xs sm:text-sm text-white/90;
+  display: block;
   white-space: pre-wrap;
-  word-break: break-word;
+  word-break: break-all;
 }
 
+/* Mobile adjustments */
 @media (max-width: 640px) {
-  .prose pre {
-    margin: 1rem -1rem;
-    border-radius: 0;
+  .prose .bg-muted {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .prose .bg-muted pre {
+    width: 100%;
+    border-radius: 4px;
+    padding: 0.75rem;
   }
 }
