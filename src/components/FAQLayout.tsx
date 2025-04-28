@@ -104,15 +104,15 @@ export const FAQLayout = ({ children, title, description, lastUpdated, currentSl
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-24 border-white/10">
+            <Card className="sticky top-24 border-white/10 bg-card/50 backdrop-blur">
               <div className="p-4">
-                <h3 className="text-lg font-medium mb-4 text-white">FAQ Categories</h3>
+                <h3 className="text-lg font-semibold mb-4 text-gradient">FAQ Categories</h3>
                 <ul className="space-y-2">
                   <li>
                     <Link 
                       to="/faq"
                       className={cn(
-                        "flex items-center p-2 rounded-md hover:bg-accent hover:text-accent-foreground",
+                        "flex items-center p-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
                         !currentSlug && "bg-primary/20 text-primary"
                       )}
                     >
@@ -125,7 +125,7 @@ export const FAQLayout = ({ children, title, description, lastUpdated, currentSl
                       <Link 
                         to={`/faq/${item.slug}`}
                         className={cn(
-                          "flex items-center p-2 rounded-md hover:bg-accent hover:text-accent-foreground",
+                          "flex items-center p-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
                           activeItem === item.slug && "bg-primary/20 text-primary"
                         )}
                       >
@@ -142,16 +142,18 @@ export const FAQLayout = ({ children, title, description, lastUpdated, currentSl
           {/* Main Content */}
           <div className="lg:col-span-3">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-white mb-2">{title}</h1>
-              {description && <p className="text-muted-foreground text-lg mb-4">{description}</p>}
-              <div className="flex items-center text-sm text-muted-foreground mb-6">
+              <h1 className="text-4xl font-bold text-gradient mb-4">{title}</h1>
+              {description && <p className="text-muted-foreground text-lg mb-4 leading-relaxed">{description}</p>}
+              <div className="flex items-center text-sm text-muted-foreground">
                 <Clock className="mr-1.5 h-4 w-4" />
                 <span>Last updated: {lastUpdated}</span>
               </div>
             </div>
             
             <div className="prose prose-invert max-w-none">
-              {children}
+              <div className="space-y-8">
+                {children}
+              </div>
             </div>
           </div>
         </div>
