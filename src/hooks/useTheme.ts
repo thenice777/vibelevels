@@ -1,38 +1,54 @@
 import { useEffect, useState } from "react";
 
+export type Theme = 'light' | 'dark';
+
 export function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== "undefined") {
-      // Check if theme exists in localStorage
-      const savedTheme = localStorage.getItem("theme");
+  // Initialize theme state from localStorage or system preference
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Only run in browser environment
+    if (typeof window === "undefined") return 'light';
+    
+    try {
+      // Check localStorage first
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+        return savedTheme;
+      }
       
-      // Check if user prefers dark mode
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      // Return saved theme or system preference
-      return (savedTheme as 'light' | 'dark') || (prefersDark ? 'dark' : 'light');
+      // Fall back to system preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+    } catch (error) {
+      console.error("Error initializing theme:", error);
     }
-    return "light";
+    
+    // Default to light theme if all else fails
+    return 'light';
   });
 
-  // Apply theme change to document
+  // Apply theme to document and store in localStorage
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      // This is the key fix: Just toggle the dark class as Tailwind expects
-      // Rather than adding/removing both classes
+    if (typeof window === "undefined") return;
+    
+    try {
+      // Apply theme by adding/removing dark class as Tailwind expects
       document.documentElement.classList.toggle("dark", theme === "dark");
       
-      // Store in localStorage
+      // Update localStorage
       localStorage.setItem("theme", theme);
       
-      console.log(`Theme switched to: ${theme}, dark class ${theme === "dark" ? "added" : "removed"}`);
+      console.log(`Theme set to: ${theme}`);
+    } catch (error) {
+      console.error("Error applying theme:", error);
     }
   }, [theme]);
 
+  // Function to toggle between themes
   const toggleTheme = () => {
     console.log(`Toggling theme from ${theme} to ${theme === 'dark' ? 'light' : 'dark'}`);
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
-  return { theme, toggleTheme };
+  return { theme, setTheme, toggleTheme };
 }
