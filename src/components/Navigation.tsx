@@ -103,35 +103,35 @@ export const Navigation = () => {
           </Link>
           <Link 
             to="/dashboard" 
-            className="py-2 px-3 rounded hover:bg-accent"
+            className="py-2 px-3 rounded hover:bg-accent text-foreground"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             dashboard
           </Link>
           <Link 
             to="/achievements" 
-            className="py-2 px-3 rounded hover:bg-accent"
+            className="py-2 px-3 rounded hover:bg-accent text-foreground"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             achievements
           </Link>
           <Link 
             to="/community" 
-            className="py-2 px-3 rounded hover:bg-accent"
+            className="py-2 px-3 rounded hover:bg-accent text-foreground"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             community
           </Link>
           <Link 
             to="/blog" 
-            className="py-2 px-3 rounded hover:bg-accent"
+            className="py-2 px-3 rounded hover:bg-accent text-foreground"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             blog
           </Link>
           <Button 
             variant="outline" 
-            className="border-primary text-primary hover:bg-primary hover:text-foreground w-full mt-2 gap-2"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full mt-2 gap-2"
           >
             <LogIn className="h-4 w-4" /> log in
           </Button>
