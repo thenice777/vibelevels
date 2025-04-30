@@ -128,7 +128,7 @@ const Blog = () => {
                     {featuredPost.category}
                   </Badge>
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-3">{featuredPost.title}</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-3">{featuredPost.title}</h2>
                 <p className="text-foreground mb-4">{featuredPost.excerpt}</p>
                 <span className="text-primary hover:underline">Read article →</span>
               </CardContent>
@@ -138,11 +138,11 @@ const Blog = () => {
         
         {/* All Posts */}
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-8">all posts</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-8">all posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allPosts.slice(1).map((post) => (
               <Link to={`/blog/${post.slug}`} key={post.id} className="block">
-                <Card className="h-full border-white/10 transition-all hover:border-primary/50">
+                <Card className="h-full border-border transition-all hover:border-primary/50">
                   <div className="aspect-[3/2] bg-muted/70 flex items-center justify-center">
                     {post.image ? (
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
@@ -157,7 +157,7 @@ const Blog = () => {
                         {post.category}
                       </Badge>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{post.title}</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{post.title}</h3>
                     <p className="text-foreground line-clamp-2 mb-3">{post.excerpt}</p>
                     <span className="text-primary hover:underline">Read more →</span>
                   </CardContent>
