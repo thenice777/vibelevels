@@ -5,14 +5,22 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const TestLayoutPage = () => {
+  const { theme, toggleTheme } = useThemeContext();
+  
   return (
     <Layout>
       <div className="p-8 max-w-[700px] mx-auto text-left">
-        <div className="sticky top-0 bg-background z-10 pb-2">
-          <h1 className="text-center text-foreground">Test Layout Page</h1>
-          <p className="text-center text-muted-foreground">
-            <strong>Scrollable Content Demo</strong>
+        <div className="sticky top-0 bg-background z-10 pb-4 transition-colors duration-300">
+          <h1 className="text-center text-foreground text-3xl font-bold mb-2">Theme Test Page</h1>
+          <p className="text-center text-muted-foreground mb-4">
+            <strong>Current theme: {theme}</strong>
           </p>
+          <div className="flex justify-center mb-6 gap-4">
+            <ThemeToggle />
+            <Button onClick={toggleTheme} variant="outline" className="border-primary text-primary px-4">
+              Toggle theme via button
+            </Button>
+          </div>
         </div>
         <p className="text-foreground">Welcome to the test page! Here's some sample content to demonstrate the new scrollable Content area. Scroll down to see the effect!</p>
         <h2 className="text-foreground font-semibold text-xl mt-6 mb-3">Sample List</h2>
