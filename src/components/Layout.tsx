@@ -8,8 +8,10 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
+  const { theme } = useThemeContext();
+  
   return (
-    <div className="min-h-screen flex flex-col bg-background font-sans">
+    <div className="min-h-screen flex flex-col bg-background font-sans transition-colors duration-300">
       <Navigation />
       <div className="flex flex-col flex-1" style={{ minHeight: 0 }}>
         <Content>
