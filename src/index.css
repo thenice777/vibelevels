@@ -5,90 +5,104 @@
 @layer base {
   /* Light theme variables (default) */
   :root, .light {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main background and text colors */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 222 14% 16%; /* Dark blue-gray for text - better contrast than pure black */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card colors */
+    --card: 0 0% 100%; /* White card background */
+    --card-foreground: 222 14% 16%; /* Dark text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover colors */
+    --popover: 0 0% 100%; /* White popover background */
+    --popover-foreground: 222 14% 16%; /* Dark text on popovers */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - vibrant blue */
+    --primary: 215 90% 52%; /* Bright blue - more vibrant than previous */
+    --primary-foreground: 210 40% 98%; /* Near white text on primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary UI colors - light blue-gray */
+    --secondary: 214 32% 96%; /* Light blue-gray for secondary elements */
+    --secondary-foreground: 222 14% 16%; /* Dark text on secondary elements */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted elements */
+    --muted: 214 32% 96%; /* Light blue-gray for subtle backgrounds */
+    --muted-foreground: 218 11% 45%; /* Medium gray for muted text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent elements */
+    --accent: 214 32% 92%; /* Slightly darker accent for hover states */
+    --accent-foreground: 222 14% 16%; /* Dark text on accent backgrounds */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive elements */
+    --destructive: 0 84% 60%; /* Bright red for destructive actions */
+    --destructive-foreground: 210 40% 98%; /* Light text on destructive elements */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and input colors */
+    --border: 214 32% 91%; /* Light border color */
+    --input: 214 32% 91%; /* Input border color */
+    --ring: 215 90% 52%; /* Focus ring uses primary blue */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Consistent border radius */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar specific colors */
+    --sidebar-background: 210 40% 98%; /* Very light blue background */
+    --sidebar-foreground: 222 14% 30%; /* Dark text for sidebar */
+    --sidebar-primary: 215 90% 52%; /* Primary blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on primary */
+    --sidebar-accent: 214 32% 95%; /* Light accent for sidebar elements */
+    --sidebar-accent-foreground: 222 14% 16%; /* Dark text on accent */
+    --sidebar-border: 214 32% 90%; /* Light border for sidebar */
+    --sidebar-ring: 215 90% 52%; /* Primary blue for focus indicators */
   }
 
   /* Dark theme variables */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Main background and text colors */
+    --background: 222 18% 12%; /* Dark blue-gray background - not pure black for softer look */
+    --foreground: 210 40% 98%; /* Off-white for text - easier on eyes than pure white */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Card colors */
+    --card: 222 16% 16%; /* Slightly lighter than background for cards */
+    --card-foreground: 210 40% 98%; /* Off-white text on cards */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Popover colors */
+    --popover: 222 16% 16%; /* Match card background */
+    --popover-foreground: 210 40% 98%; /* Off-white text */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary brand colors - blue with good contrast */
+    --primary: 215 90% 60%; /* Brighter blue for dark mode - more vibrant */
+    --primary-foreground: 222 16% 16%; /* Dark text on primary for contrast */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary UI colors */
+    --secondary: 217 19% 22%; /* Dark but visible secondary elements */
+    --secondary-foreground: 210 40% 98%; /* Off-white text on secondary */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted elements */
+    --muted: 217 19% 22%; /* Same as secondary for consistency */
+    --muted-foreground: 215 20% 75%; /* Light gray for muted text - improved readability */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent elements */
+    --accent: 217 19% 27%; /* Slightly lighter than secondary for hover states */
+    --accent-foreground: 210 40% 98%; /* Off-white text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive elements */
+    --destructive: 0 75% 50%; /* Bright red with proper contrast */
+    --destructive-foreground: 210 40% 98%; /* Off-white text on destructive */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Border and input colors */
+    --border: 217 19% 27%; /* Visible but not harsh borders */
+    --input: 217 19% 27%; /* Match border color */
+    --ring: 215 90% 60%; /* Bright primary color for focus rings */
+    
+    /* Sidebar specific colors */
+    --sidebar-background: 222 20% 10%; /* Slightly darker than main background */
+    --sidebar-foreground: 210 40% 98%; /* Off-white text */
+    --sidebar-primary: 215 90% 60%; /* Bright blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on primary */
+    --sidebar-accent: 217 19% 18%; /* Subtle accent color */
+    --sidebar-accent-foreground: 210 40% 98%; /* Off-white text */
+    --sidebar-border: 217 19% 22%; /* Visible border */
+    --sidebar-ring: 215 90% 60%; /* Bright blue for focus */
   }
 }
 
