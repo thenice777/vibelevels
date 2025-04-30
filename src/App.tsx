@@ -9,6 +9,7 @@ import QuizPage from "./pages/QuizPage";
 import Unit1Levels from "./pages/Unit1Levels";
 import Unit1Quiz from "./pages/Unit1Quiz";
 import NotFound from "./pages/NotFound";
+import TestLayoutPage from "./pages/TestLayout";
 import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
 import Blog from "./pages/Blog";
@@ -59,6 +60,9 @@ const App = () => (
           <Route path="/faq/security-best-practices" element={<SecurityBestPractices />} />
           <Route path="/faq/handling-inconsistent-outputs" element={<HandlingInconsistentOutputs />} />
           <Route path="/faq/generating-effective-tests" element={<GeneratingEffectiveTests />} />
+
+          {/* Custom Test Page Route */}
+          <Route path="/testlayout" element={<TestLayoutPage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

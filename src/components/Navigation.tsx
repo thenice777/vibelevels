@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -13,15 +12,16 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { LogIn, Menu } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Fixed header: ensure main content has top padding/margin to avoid being hidden
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background border-b border-white/10">
-      {/* Fixed header: ensure main content has top padding/margin to avoid being hidden */}
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 w-full z-50 h-20 bg-background border-b border-border flex items-center shadow-md backdrop-blur">
+      {/* Container centers content horizontally and flex items-center on nav centers vertically */}
+      <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="text-primary text-2xl font-bold">
           vibelevels
         </Link>
@@ -69,7 +69,8 @@ export const Navigation = () => {
             <LogIn className="h-4 w-4" /> log in
           </Button>
         </div>
-        
+        {/* Theme toggle button */}
+        <ThemeToggle />
         {/* Mobile menu button */}
         <Button 
           variant="outline" 
@@ -83,7 +84,7 @@ export const Navigation = () => {
       
       {/* Mobile menu */}
       <div className={cn(
-        "md:hidden py-4 px-4 border-t border-white/5 bg-background",
+        "absolute top-full left-0 w-full md:hidden py-4 px-4 border-t border-border bg-background backdrop-blur shadow-md", 
         isMobileMenuOpen ? "block" : "hidden"
       )}>
         <div className="flex flex-col space-y-3">

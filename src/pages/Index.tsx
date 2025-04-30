@@ -52,6 +52,14 @@ const Index = () => {
             >
               explore dashboard
             </Button>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="text-xs text-muted-foreground border border-dashed border-primary/30 hover:bg-primary/10 px-6"
+              onClick={() => navigate('/testlayout')}
+            >
+              test layout page
+            </Button>
           </div>
         </div>
       </section>
