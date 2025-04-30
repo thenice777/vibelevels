@@ -36,7 +36,15 @@ Visit [vibelevels.lovable.dev](https://vibelevels.lovable.dev) to see the live a
 - `/src/pages/faq` - FAQ and troubleshooting guides
 - `/src/assets` - Static assets and content
 
-## Created with Lovable
+## Created through Vibe Coding
 
-This project was built using [Lovable](https://lovable.dev), an AI-powered web application builder.
+This project was built using various AI tools:
 
+- [Lovable](https://lovable.dev) - AI-powered web application builder
+- [Claude](https://anthropic.com/claude) - Conversational AI assistant
+- [Cursor](https://cursor.sh) - AI-powered code editor
+- [Aider](https://aider.chat) - AI pair programming tool
+
+## Milestones
+
+- April 30, 2025: Implemented a complete dark mode system for vibelevels by enhancing the theme hooks, fixing the Tailwind configuration to properly use CSS variables with HSL syntax, and ensuring all components respond appropriately to theme changes. Fixed all color issues and ensured proper contrast ratios for accessibility.
