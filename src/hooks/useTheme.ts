@@ -18,19 +18,14 @@ export function useTheme() {
   // Apply theme change to document
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Apply class to html element
-      const root = document.documentElement;
-      
-      // Remove both classes first
-      root.classList.remove("light", "dark");
-      
-      // Add the current theme class
-      root.classList.add(theme);
+      // This is the key fix: Just toggle the dark class as Tailwind expects
+      // Rather than adding/removing both classes
+      document.documentElement.classList.toggle("dark", theme === "dark");
       
       // Store in localStorage
       localStorage.setItem("theme", theme);
       
-      console.log(`Theme switched to: ${theme}`);
+      console.log(`Theme switched to: ${theme}, dark class ${theme === "dark" ? "added" : "removed"}`);
     }
   }, [theme]);
 
