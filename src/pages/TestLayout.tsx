@@ -1,5 +1,8 @@
 import React from "react";
 import { Layout } from "@/components/Layout";
+import { useThemeContext } from "@/contexts/ThemeContext";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const TestLayoutPage = () => {
   return (
