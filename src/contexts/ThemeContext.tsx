@@ -1,10 +1,11 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme, Theme } from '@/hooks/useTheme';
 
 // Define the shape of our theme context
 type ThemeContextType = {
-  theme: 'light' | 'dark';
+  theme: Theme;
   toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 };
 
 // Create the context with a default value
@@ -27,12 +28,13 @@ type ThemeProviderProps = {
 // ThemeProvider component that wraps the app
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   // Use our existing useTheme hook
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, setTheme } = useTheme();
   
   // Create the value object to be provided to consumers
   const value = {
     theme,
     toggleTheme,
+    setTheme,
   };
   
   return (
