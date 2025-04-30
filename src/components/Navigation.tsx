@@ -17,6 +17,7 @@ import { useThemeContext } from "@/contexts/ThemeContext";
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme } = useThemeContext();
 
   // Fixed header: ensure main content has top padding/margin to avoid being hidden
   return (
@@ -32,7 +33,7 @@ export const Navigation = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">learn</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-foreground">learn</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[400px] p-4 grid gap-3">
                     <Link to="/courses" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
