@@ -67,19 +67,22 @@ export const Navigation = () => {
             blog
           </Link>
           
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-foreground gap-2">
+          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2">
             <LogIn className="h-4 w-4" /> log in
           </Button>
+          
+          {/* Theme toggle button */}
+          <ThemeToggle />
         </div>
-        {/* Theme toggle button */}
-        <ThemeToggle />
+        
         {/* Mobile menu button */}
-        <Button 
-          variant="outline" 
-          size="icon" 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-          className="md:hidden"
-        >
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
           <Menu className="h-5 w-5" />
         </Button>
       </div>
