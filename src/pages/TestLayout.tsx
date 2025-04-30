@@ -22,53 +22,51 @@ const TestLayoutPage = () => {
             </Button>
           </div>
         </div>
-        <p className="text-foreground">Welcome to the test page! Here's some sample content to demonstrate the new scrollable Content area. Scroll down to see the effect!</p>
-        <h2 className="text-foreground font-semibold text-xl mt-6 mb-3">Sample List</h2>
-        <ul className="list-disc pl-5 space-y-2 text-foreground">
-          <li>Navigation is fixed at the top</li>
-          <li>Footer is always at the bottom of the page</li>
-          <li>This content area scrolls independently</li>
-        </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="rounded-lg border border-border p-4 bg-card">
+            <h2 className="font-semibold text-xl mb-3 text-card-foreground">Card Component</h2>
+            <p className="text-card-foreground">This demonstrates the card background and text colors.</p>
+          </div>
+          
+          <div className="rounded-lg border border-border p-4 bg-accent">
+            <h2 className="font-semibold text-xl mb-3 text-accent-foreground">Accent Component</h2>
+            <p className="text-accent-foreground">This demonstrates the accent background and text colors.</p>
+          </div>
+          
+          <div className="rounded-lg border border-border p-4 bg-primary">
+            <h2 className="font-semibold text-xl mb-3 text-primary-foreground">Primary Component</h2>
+            <p className="text-primary-foreground">This demonstrates the primary background and text colors.</p>
+          </div>
+          
+          <div className="rounded-lg border border-border p-4 bg-secondary">
+            <h2 className="font-semibold text-xl mb-3 text-secondary-foreground">Secondary Component</h2>
+            <p className="text-secondary-foreground">This demonstrates the secondary background and text colors.</p>
+          </div>
+        </div>
+        
         <h2 className="text-foreground font-semibold text-xl mt-6 mb-3">Sample Table</h2>
         <table className="w-full border-collapse mb-6">
           <thead>
             <tr>
-              <th className="border border-border p-2 text-foreground">Feature</th>
-              <th className="border border-border p-2 text-foreground">Status</th>
+              <th className="border border-border p-2 text-foreground">Element</th>
+              <th className="border border-border p-2 text-foreground">Class</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-border p-2 text-foreground">Header</td>
-              <td className="border border-border p-2 text-foreground">Visible</td>
+              <td className="border border-border p-2 text-foreground">Background</td>
+              <td className="border border-border p-2 text-foreground"><code>bg-background</code></td>
             </tr>
             <tr>
-              <td className="border border-border p-2 text-foreground">Content Area</td>
-              <td className="border border-border p-2 text-foreground">Working</td>
+              <td className="border border-border p-2 text-foreground">Text</td>
+              <td className="border border-border p-2 text-foreground"><code>text-foreground</code></td>
             </tr>
             <tr>
-              <td className="border border-border p-2 text-foreground">Footer</td>
-              <td className="border border-border p-2 text-foreground">Visible</td>
+              <td className="border border-border p-2 text-foreground">Border</td>
+              <td className="border border-border p-2 text-foreground"><code>border-border</code></td>
             </tr>
           </tbody>
         </table>
-        <h2 className="text-foreground font-semibold text-xl mt-6 mb-3">Sample Image</h2>
-        <div className="text-center mb-6">
-          <img src="https://via.placeholder.com/300x120?text=Sample+Image" alt="Sample" className="rounded-lg" />
-        </div>
-        <p className="text-muted-foreground italic text-center">
-          This is a sample image placeholder.
-        </p>
-
-        {/* Add a long list to force scrolling */}
-        <h2 className="text-foreground font-semibold text-xl mt-6 mb-3">Long List</h2>
-        <ol className="mb-8 text-foreground">
-          {Array.from({ length: 30 }, (_, i) => (
-            <li key={i} className="py-2 border-b border-border">
-              List item {i + 1}
-            </li>
-          ))}
-        </ol>
 
         <div className="sticky bottom-0 bg-background z-10 pt-2 text-center border-t-2 border-dashed border-border">
           <strong className="text-foreground">Bottom of Scrollable Content</strong>
