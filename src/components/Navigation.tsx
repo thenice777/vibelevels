@@ -84,7 +84,8 @@ export const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
           <Menu className="h-5 w-5" />
-        </Button>
+          </Button>
+        </div>
       </div>
       
       {/* Mobile menu */}
