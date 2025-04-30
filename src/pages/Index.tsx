@@ -25,12 +25,12 @@ const Index = () => {
       <section className="relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/5 dark:bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/30 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
             <span className="text-primary">vibe</span>levels
           </h1>
           <p className="text-xl md:text-2xl text-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -67,7 +67,7 @@ const Index = () => {
       {/* Courses Section */}
       <section className="container mx-auto px-4 py-20 md:py-24">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl font-bold text-white">
+          <h2 className="text-3xl font-bold text-foreground">
             top courses
           </h2>
           <Button 
@@ -92,9 +92,9 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 md:py-24">
-        <div className="bg-secondary/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 md:p-12">
+        <div className="bg-secondary/50 dark:bg-secondary/20 backdrop-blur-sm border border-border rounded-2xl p-8 md:p-12">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 tracking-tight">
               ready to level up your skills?
             </h2>
             <p className="text-foreground mb-8 text-lg leading-relaxed">

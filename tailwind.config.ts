@@ -2,6 +2,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  // Use class strategy for dark mode - this will look for .dark on the HTML element
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
