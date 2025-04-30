@@ -89,7 +89,7 @@ const Courses = () => {
 
         <div className="mt-16 text-center">
           <h2 className="text-2xl font-semibold text-white mb-6">coming soon</h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-foreground mb-8">
             We're constantly working on new courses. Check back soon for more content!
           </p>
           <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">

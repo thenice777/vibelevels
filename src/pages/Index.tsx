@@ -33,7 +33,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             <span className="text-primary">vibe</span>levels
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             go from 0 to 1 fast with vibelevels — your launchpad for modern web development
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -89,7 +89,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
               ready to level up your skills?
             </h2>
-            <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+            <p className="text-foreground mb-8 text-lg leading-relaxed">
               join thousands of developers who are mastering web development through our gamified learning platform.
             </p>
             <Button 

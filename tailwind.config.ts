@@ -22,36 +22,13 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "#0F1117",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "#9B87F5",
-          foreground: "#FFFFFF",
-        },
-        secondary: {
-          DEFAULT: "#1A1F2C",
-          foreground: "#FFFFFF",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "#2A2F3C",
-          foreground: "#A1A1AA",
-        },
-        accent: {
-          DEFAULT: "#2A2F3C",
-          foreground: "#FFFFFF",
-        },
-        card: {
-          DEFAULT: "#1A1F2C",
-          foreground: "#FFFFFF",
-        },
+       colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        'muted-foreground': "var(--muted-foreground)",
+        primary: "var(--primary)",
+        'primary-foreground': "var(--primary-foreground)",
+        border: "var(--border)"
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,5 +51,32 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-animate")
+  ],
+  typography: (theme) => ({
+    DEFAULT: {
+      css: {
+        color: 'var(--foreground)',
+        a: { color: 'var(--primary)' },
+        h1: { color: 'var(--foreground)' },
+        h2: { color: 'var(--foreground)' },
+        h3: { color: 'var(--foreground)' },
+        strong: { color: 'var(--foreground)' },
+        code: { color: 'var(--primary)' },
+      },
+    },
+    invert: {
+      css: {
+        color: 'var(--foreground)',
+        a: { color: 'var(--primary)' },
+        h1: { color: 'var(--foreground)' },
+        h2: { color: 'var(--foreground)' },
+        h3: { color: 'var(--foreground)' },
+        strong: { color: 'var(--foreground)' },
+        code: { color: 'var(--primary)' },
+      },
+    },
+  }),
 } satisfies Config;

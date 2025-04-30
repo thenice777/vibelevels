@@ -10,15 +10,15 @@ const GeneratingEffectiveTests = () => {
       currentSlug="generating-effective-tests"
       description="Strategies to ensure proper test coverage for AI-generated implementations"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         AI-generated code often lacks proper testing, or the tests it provides may be superficial 
         and miss important edge cases or failure modes.
       </p>
       
       <h2>Solutions</h2>
       
-      <h3>1. Request Test-First Development</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">1. Request Test-First Development</h3>
       <p>
         Ask for tests before implementation:
       </p>
@@ -30,7 +30,7 @@ const GeneratingEffectiveTests = () => {
 - Performance considerations for large inputs"`}</code>
       </pre>
       
-      <h3>2. Specify Test Coverage Requirements</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">2. Specify Test Coverage Requirements</h3>
       <p>Be explicit about test coverage expectations:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>{`"Please ensure the tests cover at least:
@@ -40,7 +40,7 @@ const GeneratingEffectiveTests = () => {
 - Error handling paths"`}</code>
       </pre>
       
-      <h3>3. Request Test Types by Category</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">3. Request Test Types by Category</h3>
       <p>Ask for different types of tests:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>{`"Please provide the following types of tests:
@@ -50,7 +50,7 @@ const GeneratingEffectiveTests = () => {
 - Performance tests for resource-intensive operations"`}</code>
       </pre>
       
-      <h3>4. Provide Test Scenarios</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">4. Provide Test Scenarios</h3>
       <p>Describe specific scenarios that should be tested:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>{`"Please include tests for these specific scenarios:
@@ -61,7 +61,7 @@ const GeneratingEffectiveTests = () => {
 - Login with special characters in username"`}</code>
       </pre>
       
-      <h3>5. Ask for Test Strategy Explanation</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">5. Ask for Test Strategy Explanation</h3>
       <p>Request explanation of the testing approach:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>
@@ -70,7 +70,7 @@ const GeneratingEffectiveTests = () => {
         </code>
       </pre>
       
-      <h3>6. Implement Test-Driven Refinement</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">6. Implement Test-Driven Refinement</h3>
       <p>Use tests to drive code improvements:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>
@@ -79,7 +79,7 @@ const GeneratingEffectiveTests = () => {
         </code>
       </pre>
       
-      <h3>7. Request Mocking Strategy</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">7. Request Mocking Strategy</h3>
       <p>For external dependencies, ask about testing approach:</p>
       <pre className="bg-muted p-4 rounded-md overflow-auto text-sm">
         <code>
@@ -88,14 +88,14 @@ const GeneratingEffectiveTests = () => {
         </code>
       </pre>
       
-      <h2>Key Takeaway</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">Key Takeaway</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         Effective testing of AI-generated code requires explicit testing requirements and a structured approach 
         that prioritizes test coverage across normal operations, edge cases, and error conditions. 
         Test-first development where tests are created before implementation often leads to more robust code.
       </p>
       
-      <h3>Related Topics</h3>
+      <h3 className="text-xl font-medium text-foreground mb-3">Related Topics</h3>
       <ul>
         <li><Link to="/faq/debugging-ai-generated-code">Debugging AI-Generated Code</Link></li>
         <li><Link to="/faq/security-best-practices">Security Best Practices</Link></li>

@@ -12,7 +12,7 @@ const SecurityBestPractices = () => {
       <section className="space-y-6">
         <div>
           <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-foreground leading-relaxed mb-4">
             AI-generated code often lacks proper security considerations and may introduce vulnerabilities 
             that aren't immediately obvious.
           </p>
@@ -23,7 +23,7 @@ const SecurityBestPractices = () => {
           
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">1. Explicitly Request Security Focus</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">1. Explicitly Request Security Focus</h3>
               <p className="mb-3">Include security requirements in your initial prompt:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>
@@ -34,7 +34,7 @@ const SecurityBestPractices = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">2. Implement a Security Checklist Review</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">2. Implement a Security Checklist Review</h3>
               <p className="mb-3">Ask the AI to review its code against security best practices:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>{`"Before we proceed, please review this code for security vulnerabilities, specifically checking for:
@@ -48,7 +48,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">3. Request Threat Modeling</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">3. Request Threat Modeling</h3>
               <p className="mb-3">For critical components, ask for explicit threat modeling:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>
@@ -59,7 +59,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">4. Separate Security-Critical Components</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">4. Separate Security-Critical Components</h3>
               <p className="mb-3">Handle the most security-critical components separately:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>
@@ -70,7 +70,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">5. Request Defensive Implementation</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">5. Request Defensive Implementation</h3>
               <p className="mb-3">Ask specifically for defensive programming approaches:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>{`"Please implement this with defensive programming principles:
@@ -82,7 +82,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">6. Look for Security-Relevant Comments</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">6. Look for Security-Relevant Comments</h3>
               <p className="mb-3">Request that the AI explicitly comment on security considerations:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>
@@ -93,7 +93,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">7. Security-Focused Testing</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">7. Security-Focused Testing</h3>
               <p className="mb-3">Request security-focused test cases:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>{`"Please provide test cases specifically designed to verify the security properties of this code, including tests for:
@@ -105,7 +105,7 @@ const SecurityBestPractices = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-medium text-white mb-3">8. Security Review After Changes</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">8. Security Review After Changes</h3>
               <p className="mb-3">After any modifications, specifically request security re-review:</p>
               <pre className="bg-muted/50 backdrop-blur border border-white/5 p-4 rounded-lg overflow-auto text-sm mb-4">
                 <code>
@@ -119,7 +119,7 @@ const SecurityBestPractices = () => {
         
         <div>
           <h2 className="text-2xl font-semibold text-gradient mb-4">Key Takeaway</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-foreground leading-relaxed mb-4">
             Security must be explicitly prioritized when working with AI-generated code. 
             The most effective approach combines upfront security requirements, systematic review against 
             security best practices, and ongoing vigilance during modifications. Never assume AI-generated 
@@ -128,7 +128,7 @@ const SecurityBestPractices = () => {
         </div>
         
         <div>
-          <h3 className="text-xl font-medium text-white mb-3">Related Topics</h3>
+          <h3 className="text-xl font-medium text-foreground mb-3">Related Topics</h3>
           <ul className="space-y-2">
             <li>
               <Link to="/faq/debugging-ai-generated-code" className="text-primary hover:text-primary/80 transition-colors">

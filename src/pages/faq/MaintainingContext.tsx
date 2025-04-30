@@ -10,8 +10,8 @@ const MaintainingContext = () => {
       currentSlug="maintaining-context"
       description="Strategies to help AI tools remember project requirements and previous decisions"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         During long development sessions, AI tools often forget earlier requirements, decisions, 
         or constraints, causing inconsistent output and requiring constant reminders.
       </p>

@@ -143,17 +143,15 @@ export const FAQLayout = ({ children, title, description, lastUpdated, currentSl
           <div className="lg:col-span-3">
             <div className="mb-8">
               <h1 className="text-4xl font-bold text-gradient mb-4">{title}</h1>
-              {description && <p className="text-muted-foreground text-lg mb-4 leading-relaxed">{description}</p>}
-              <div className="flex items-center text-sm text-muted-foreground">
+              {description && <p className="text-foreground text-lg mb-4 leading-relaxed">{description}</p>}
+              <div className="flex items-center text-sm text-foreground">
                 <Clock className="mr-1.5 h-4 w-4" />
                 <span>Last updated: {lastUpdated}</span>
               </div>
             </div>
             
-            <div className="prose prose-invert max-w-none">
-              <div className="space-y-8">
-                {children}
-              </div>
+            <div className="space-y-8">
+              {children}
             </div>
           </div>
         </div>

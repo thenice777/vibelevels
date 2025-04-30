@@ -10,8 +10,8 @@ const DebuggingAIGeneratedCode = () => {
       currentSlug="debugging-ai-generated-code"
       description="Systematic approaches to find and fix issues in code written by AI assistants"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         When AI-generated code doesn't work as expected, debugging can be particularly challenging 
         because you might not fully understand the implementation details or the AI's reasoning.
       </p>

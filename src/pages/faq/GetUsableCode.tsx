@@ -10,8 +10,8 @@ const GetUsableCode = () => {
       currentSlug="getting-usable-code-faster"
       description="Strategies to get working code faster with fewer iterations"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         AI coding tools often generate significant output, but much of it may not be immediately usable. 
         It can take numerous iterations, wasting time and effort before reaching code that actually works for your needs.
       </p>

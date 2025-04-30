@@ -78,15 +78,15 @@ const FAQ = () => {
 
         <div className="mb-12 max-w-3xl">
           <h1 className="text-4xl font-bold text-gradient mb-6">Vibe Coding Troubleshooting: Solutions to Common AI Coding Problems</h1>
-          <div className="flex items-center text-sm text-muted-foreground mb-6">
+          <div className="flex items-center text-sm text-foreground mb-6">
             <Clock className="mr-1.5 h-4 w-4" />
             <span>Last updated: {lastUpdated}</span>
           </div>
-          <div className="prose prose-invert max-w-none">
-            <p className="text-lg leading-relaxed mb-4">
+          <div className="mb-8">
+            <p className="text-xl font-semibold text-gradient mb-2">
               Struggling with AI coding tools? You're not alone. This guide addresses the real challenges developers face when building with AI assistants like ChatGPT, Claude, and GitHub Copilot.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-foreground leading-relaxed">
               Vibe coding—creating software by conversing with AI—can dramatically speed up development, but it also introduces unique frustrations. This FAQ provides proven solutions to the most common problems, helping you build better software with less frustration.
             </p>
           </div>
@@ -99,7 +99,7 @@ const FAQ = () => {
                 <CardContent className="p-6">
                   <div className="text-3xl mb-4 transform transition-transform group-hover:scale-110">{category.icon}</div>
                   <h3 className="text-xl font-semibold text-gradient mb-2">{category.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{category.description}</p>
+                  <p className="text-foreground leading-relaxed">{category.description}</p>
                 </CardContent>
               </Card>
             </Link>

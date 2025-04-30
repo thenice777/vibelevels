@@ -118,18 +118,18 @@ const Blog = () => {
                 {featuredPost.image ? (
                   <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover" />
                 ) : (
-                  <div className="text-muted-foreground">Featured image</div>
+                  <div className="text-foreground">Featured image</div>
                 )}
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-sm text-muted-foreground">{featuredPost.date}</span>
+                  <span className="text-sm text-foreground">{featuredPost.date}</span>
                   <Badge className={getCategoryColorClass(featuredPost.categoryColor)}>
                     {featuredPost.category}
                   </Badge>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-3">{featuredPost.title}</h2>
-                <p className="text-muted-foreground mb-4">{featuredPost.excerpt}</p>
+                <p className="text-foreground mb-4">{featuredPost.excerpt}</p>
                 <span className="text-primary hover:underline">Read article →</span>
               </CardContent>
             </Card>
@@ -147,18 +147,18 @@ const Blog = () => {
                     {post.image ? (
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                     ) : (
-                      <div className="text-muted-foreground">Post image</div>
+                      <div className="text-foreground">Post image</div>
                     )}
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="text-sm text-muted-foreground">{post.date}</span>
+                      <span className="text-sm text-foreground">{post.date}</span>
                       <Badge className={getCategoryColorClass(post.categoryColor)}>
                         {post.category}
                       </Badge>
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-2">{post.title}</h3>
-                    <p className="text-muted-foreground line-clamp-2 mb-3">{post.excerpt}</p>
+                    <p className="text-foreground line-clamp-2 mb-3">{post.excerpt}</p>
                     <span className="text-primary hover:underline">Read more →</span>
                   </CardContent>
                 </Card>

@@ -10,8 +10,8 @@ const HandlingInconsistentOutputs = () => {
       currentSlug="handling-inconsistent-outputs"
       description="Strategies to maintain consistency in code style, patterns, and quality"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         AI tools can produce inconsistent code style, patterns, and quality across different sessions 
         or even within the same conversation.
       </p>

@@ -10,8 +10,8 @@ const PreservingWorkingCode = () => {
       currentSlug="preserving-working-code"
       description="Protect your working code when asking AI to make changes"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         When asking AI to update or fix part of a codebase, it often rewrites or modifies working elements, 
         causing new problems while trying to fix existing ones.
       </p>

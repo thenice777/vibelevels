@@ -56,7 +56,7 @@ const Unit1Levels: React.FC = () => {
               >
                 <div className="text-primary font-bold text-lg mb-2">Level {level.level}</div>
                 <div className="text-white font-semibold text-xl mb-2 text-center">{level.title}</div>
-                <div className="mb-4 text-muted-foreground text-center">{level.quiz?.title}</div>
+                <div className="mb-4 text-foreground text-center">{level.quiz?.title}</div>
                 <div className="mb-4 text-sm">Status: <span className="font-bold">{status}</span></div>
                 {state.completed && typeof state.score === 'number' && (
                   <div className="mb-2 text-green-400 font-semibold">Score: {state.score}%</div>

@@ -38,13 +38,13 @@ export const CourseCard = ({ title, description, level, steps, medals, certifica
       case "advanced":
         return "bg-amber-500/20 text-amber-300 hover:bg-amber-500/30";
       default:
-        return "bg-accent text-white";
+        return "bg-accent text-foreground";
     }
   };
 
   return (
     <div 
-      className={`bg-gradient-to-br ${getGradient(level)} rounded-xl p-6 border border-white/5 hover:border-primary/30 transition-all duration-300 flex flex-col h-full`}
+      className={`bg-gradient-to-br ${getGradient(level)} rounded-xl p-6 border border-background/5 hover:border-primary/30 transition-all duration-300 flex flex-col h-full`}
       style={{ boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)" }}
     >
       <div className="flex flex-col flex-grow">
@@ -55,7 +55,7 @@ export const CourseCard = ({ title, description, level, steps, medals, certifica
           <span className="text-muted-foreground text-sm">{steps} steps</span>
         </div>
         
-        <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+        <h3 className="text-xl font-bold text-foreground mb-3">{title}</h3>
         <p className="text-muted-foreground mb-6 flex-grow">{description}</p>
         
         <div className="flex items-center gap-4 mb-5">
@@ -70,7 +70,7 @@ export const CourseCard = ({ title, description, level, steps, medals, certifica
         </div>
         
         <Button 
-          className="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2"
+          className="w-full bg-primary hover:bg-primary/90 text-foreground flex items-center justify-center gap-2"
           onClick={onClick}
         >
           <BookOpen className="h-4 w-4" />

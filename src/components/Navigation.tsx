@@ -17,8 +17,10 @@ import { useState } from "react";
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Fixed header: ensure main content has top padding/margin to avoid being hidden
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-sm border-b border-white/10">
+    <nav className="fixed top-0 w-full z-50 bg-background border-b border-white/10">
+      {/* Fixed header: ensure main content has top padding/margin to avoid being hidden */}
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-primary text-2xl font-bold">
           vibelevels
@@ -56,14 +58,14 @@ export const Navigation = () => {
             </NavigationMenuList>
           </NavigationMenu>
           
-          <Link to="/community" className="text-white hover:text-primary transition-colors">
+          <Link to="/community" className="text-foreground hover:text-primary transition-colors">
             community
           </Link>
-          <Link to="/blog" className="text-white hover:text-primary transition-colors">
+          <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
             blog
           </Link>
           
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white gap-2">
+          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-foreground gap-2">
             <LogIn className="h-4 w-4" /> log in
           </Button>
         </div>
@@ -122,7 +124,7 @@ export const Navigation = () => {
           </Link>
           <Button 
             variant="outline" 
-            className="border-primary text-primary hover:bg-primary hover:text-white w-full mt-2 gap-2"
+            className="border-primary text-primary hover:bg-primary hover:text-foreground w-full mt-2 gap-2"
           >
             <LogIn className="h-4 w-4" /> log in
           </Button>

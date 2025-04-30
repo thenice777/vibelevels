@@ -44,13 +44,13 @@ export const CourseContent = ({ title, description, color, steps }: CourseConten
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-white mb-2">{title}</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">{description}</p>
+        <h1 className="text-3xl font-bold text-foreground mb-2">{title}</h1>
+        <p className="text-foreground max-w-2xl mx-auto">{description}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1">
-          <Card className="border-white/10">
+          <Card className="borderbg-background/10">
             <CardContent className="p-4">
               <h3 className="text-lg font-medium mb-4">Course roadmap</h3>
               <div className="space-y-4">
@@ -65,7 +65,7 @@ export const CourseContent = ({ title, description, color, steps }: CourseConten
                     <div
                       className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
                         step.completed
-                          ? "bg-primary text-white"
+                          ? "bg-primary text-foreground"
                           : index === activeStepIndex
                           ? "border-2 border-primary"
                           : "border border-muted-foreground"
@@ -82,15 +82,15 @@ export const CourseContent = ({ title, description, color, steps }: CourseConten
         </div>
 
         <div className="lg:col-span-2">
-          <Card className="border-white/10">
+          <Card className="borderbg-background/10">
             <CardContent className="p-6">
-              <div className="prose prose-invert max-w-none">
+              <div className="max-w-none">
                 {steps[activeStepIndex].content}
               </div>
               
               {activeStepIndex < steps.length - 1 && (
                 <div className="flex justify-end mt-8">
-                  <Button onClick={handleNext} className="bg-primary text-white">
+                  <Button onClick={handleNext} className="bg-primary text-foreground">
                     Next step <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>

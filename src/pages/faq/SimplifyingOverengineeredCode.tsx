@@ -10,8 +10,8 @@ const SimplifyingOverengineeredCode = () => {
       currentSlug="simplifying-overengineered-code"
       description="Get simpler, more maintainable solutions from AI coding tools"
     >
-      <h2>The Problem</h2>
-      <p>
+      <h2 className="text-2xl font-semibold text-gradient mb-4">The Problem</h2>
+      <p className="text-lg text-foreground leading-relaxed mb-4">
         AI tools often generate unnecessarily complex "textbook-perfect" solutions that are overkill 
         for your actual needs, making the code harder to maintain and understand.
       </p>

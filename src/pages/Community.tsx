@@ -152,7 +152,7 @@ const Community = () => {
           
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <div className="relative flex-grow">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground h-4 w-4" />
               <Input
                 placeholder="Search topics..."
                 className="pl-10 bg-muted text-white"
@@ -176,7 +176,7 @@ const Community = () => {
                       <h3 className="text-lg font-medium text-white mb-1">
                         {category.name}
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-4">
+                      <p className="text-foreground text-sm mb-4">
                         {category.description}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ const Community = () => {
                       {category.topicCount} topics
                     </Badge>
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-foreground">
                     {category.postCount} posts
                   </div>
                 </CardContent>
@@ -197,14 +197,14 @@ const Community = () => {
         <section>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-semibold text-white">recent discussions</h2>
-            <div className="flex items-center text-sm text-muted-foreground">
+            <div className="flex items-center text-sm text-foreground">
               <span>Sort by:</span>
               <button className="ml-2 text-primary">Recent activity</button>
             </div>
           </div>
           
           <Card className="border-white/10 mb-4">
-            <div className="grid grid-cols-12 gap-4 p-4 text-sm font-medium text-muted-foreground">
+            <div className="grid grid-cols-12 gap-4 p-4 text-sm font-medium text-foreground">
               <div className="col-span-6">Topic</div>
               <div className="col-span-2 text-center hidden md:block">Replies</div>
               <div className="col-span-2 text-center hidden md:block">Views</div>
@@ -236,7 +236,7 @@ const Community = () => {
                           </Badge>
                         )}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1">
+                      <div className="text-xs text-foreground mt-1">
                         by <span className="text-primary">{topic.author}</span>
                         <span className="mx-1">•</span>
                         <Badge variant="secondary" className={getCategoryColorClass(topic.categoryColor)}>
@@ -255,7 +255,7 @@ const Community = () => {
                 <div className="col-span-2 text-center hidden md:flex items-center justify-center">
                   {topic.views}
                 </div>
-                <div className="col-span-6 md:col-span-2 text-right md:text-center text-xs md:text-sm text-muted-foreground">
+                <div className="col-span-6 md:col-span-2 text-right md:text-center text-xs md:text-sm text-foreground">
                   {topic.lastActivity}
                 </div>
               </div>

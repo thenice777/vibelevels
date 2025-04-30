@@ -121,11 +121,11 @@ const BlogPost = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">{post.title}</h1>
           
           <div className="flex flex-wrap items-center gap-4 mb-8">
-            <span className="text-sm text-muted-foreground">{post.date}</span>
-            <span className="text-sm text-muted-foreground">•</span>
-            <span className="text-sm text-muted-foreground">{post.readTime}</span>
-            <span className="text-sm text-muted-foreground">•</span>
-            <span className="text-sm text-muted-foreground">By {post.author}</span>
+            <span className="text-sm text-foreground">{post.date}</span>
+            <span className="text-sm text-foreground">•</span>
+            <span className="text-sm text-foreground">{post.readTime}</span>
+            <span className="text-sm text-foreground">•</span>
+            <span className="text-sm text-foreground">By {post.author}</span>
             <Badge className={getCategoryColorClass(post.categoryColor)}>
               {post.category}
             </Badge>
@@ -133,7 +133,7 @@ const BlogPost = () => {
           
           <Card className="border-white/10 mb-8 overflow-hidden">
             <div className="aspect-[2/1] bg-muted/70 flex items-center justify-center">
-              <div className="text-muted-foreground">Featured image</div>
+              <div className="text-foreground">Featured image</div>
             </div>
           </Card>
           

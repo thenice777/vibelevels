@@ -1,9 +1,8 @@
-
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-background">
+    <footer className="border-t border-background/10 bg-background">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -14,7 +13,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">courses</h4>
+            <h4 className="text-foreground font-semibold mb-4">courses</h4>
             <ul className="space-y-2">
               <li><Link to="/courses/web-dev-pitfalls" className="text-muted-foreground hover:text-primary">web dev pitfalls</Link></li>
               <li><Link to="/courses/project-architecture" className="text-muted-foreground hover:text-primary">project architecture</Link></li>
@@ -23,7 +22,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">resources</h4>
+            <h4 className="text-foreground font-semibold mb-4">resources</h4>
             <ul className="space-y-2">
               <li><Link to="/blog" className="text-muted-foreground hover:text-primary">blog</Link></li>
               <li><Link to="/community" className="text-muted-foreground hover:text-primary">community</Link></li>
@@ -32,7 +31,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">legal</h4>
+            <h4 className="text-foreground font-semibold mb-4">legal</h4>
             <ul className="space-y-2">
               <li><Link to="/terms" className="text-muted-foreground hover:text-primary">terms of service</Link></li>
               <li><Link to="/privacy" className="text-muted-foreground hover:text-primary">privacy policy</Link></li>
