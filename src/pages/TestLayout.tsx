@@ -68,8 +68,8 @@ const TestLayoutPage = () => {
           </tbody>
         </table>
 
-        <div className="sticky bottom-0 bg-background z-10 pt-2 text-center border-t-2 border-dashed border-border">
-          <strong className="text-foreground">Bottom of Scrollable Content</strong>
+        <div className="sticky bottom-0 bg-background z-10 pt-2 text-center border-t-2 border-dashed border-border mt-10">
+          <strong className="text-foreground">Theme is {theme === 'dark' ? '🌙 dark' : '☀️ light'}</strong>
         </div>
       </div>
     </Layout>
