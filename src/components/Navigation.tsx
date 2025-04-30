@@ -96,7 +96,7 @@ export const Navigation = () => {
         <div className="flex flex-col space-y-3">
           <Link 
             to="/courses" 
-            className="py-2 px-3 rounded hover:bg-accent"
+            className="py-2 px-3 rounded hover:bg-accent text-foreground"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             courses
