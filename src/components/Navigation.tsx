@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { LogIn, Menu } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useThemeContext } from "@/contexts/ThemeContext";
 
 export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
