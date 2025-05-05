@@ -3,6 +3,7 @@ import React from "react";
 import QuizProgress from "./QuizProgress";
 import QuizOption from "./QuizOption";
 import QuizFeedback from "./QuizFeedback";
+import QuestionDisplay from "./QuestionDisplay";
 
 interface Question {
   question: string;
@@ -60,9 +61,7 @@ const QuizCard: React.FC<QuizCardProps> = ({
         currentQuestionIndex={currentQuestionIndex} 
         totalQuestions={questions.length} 
       />
-      <div style={{ fontSize: 17, fontWeight: 500, margin: "16px 0 10px 0" }}>
-        {currentQuestion.question}
-      </div>
+      <QuestionDisplay question={currentQuestion.question} />
       <div>
         {currentQuestion.options.map((opt, idx) => {
           const isSelected = selectedAnswerIndex === idx;
