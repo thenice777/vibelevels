@@ -1,4 +1,5 @@
-import Quiz from "../components/Quiz";
+
+import Quiz from "../components/quiz/Quiz";
 import { Layout } from "@/components/Layout";
 
 const QuizPage = () => (
