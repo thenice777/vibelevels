@@ -19,13 +19,11 @@ export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme } = useThemeContext();
 
-  // Fixed header: ensure main content has top padding/margin to avoid being hidden
   return (
     <nav className="fixed top-0 w-full z-50 h-20 bg-background border-b border-border flex items-center shadow-md backdrop-blur">
-      {/* Container centers content horizontally and flex items-center on nav centers vertically */}
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-primary text-2xl font-bold">
-          vibelevels
+        <Link to="/" className="text-2xl font-bold">
+          <span className="text-primary">vibe</span><span className="text-foreground">levels</span>
         </Link>
         
         {/* Desktop Navigation */}
