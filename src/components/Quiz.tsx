@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from "react";
 import quizData from "../assets/content/quizzes/vibe-coding-unit1.json";
 
@@ -75,15 +76,34 @@ const checkBtnStyle: React.CSSProperties = {
   transition: "background 0.2s",
 };
 const nextBtnStyle: React.CSSProperties = {
-  ...checkBtnStyle,
+  marginTop: 16,
+  width: "100%",
+  padding: "12px 0",
+  borderRadius: 8,
   background: "#3763f4",
   color: "#fff",
+  fontWeight: 700,
+  fontSize: 18,
+  border: "none",
+  cursor: "pointer",
+  letterSpacing: 0.5,
+  boxShadow: "0 2px 8px #6be67222",
+  transition: "background 0.2s",
 };
 const restartBtnStyle: React.CSSProperties = {
-  ...checkBtnStyle,
+  marginTop: 16,
+  width: "100%",
+  padding: "12px 0",
+  borderRadius: 8,
   background: "#23242d",
   color: "#6be672",
   border: "2px solid #6be672",
+  fontWeight: 700,
+  fontSize: 18,
+  cursor: "pointer",
+  letterSpacing: 0.5,
+  boxShadow: "0 2px 8px #6be67222",
+  transition: "background 0.2s",
 };
 const feedbackStyle: React.CSSProperties = {
   margin: "18px 0 8px 0",
@@ -204,13 +224,14 @@ const Quiz: React.FC<QuizProps> = ({
   }
 
   const handleOptionClick = (idx: number) => {
+    // Don't allow changing answer after selection
     if (isAnswerChecked) return;
+    
+    // Set the selected answer
     setSelectedAnswerIndex(idx);
-  };
-
-  const handleCheckAnswer = () => {
-    if (selectedAnswerIndex === null) return;
-    const correct = selectedAnswerIndex === q.correctAnswer;
+    
+    // Immediately check if it's correct
+    const correct = idx === q.correctAnswer;
     setIsCorrect(correct);
     setIsAnswerChecked(true);
     if (correct) setScore((s) => s + 1);
@@ -229,7 +250,6 @@ const Quiz: React.FC<QuizProps> = ({
       setIsCorrect(null);
     }
   };
-
 
   // Progress
   const progressPercent = Math.round(((currentQuestionIndex + 1) / questions.length) * 100);
@@ -273,24 +293,12 @@ const Quiz: React.FC<QuizProps> = ({
               )}
             </div>
             <div style={{ color: "#bfcfff", marginBottom: 10 }}>{q.explanation}</div>
+            
+            {/* Next button is now always shown after an answer is selected */}
+            <button style={nextBtnStyle} onClick={handleNext}>
+              {currentQuestionIndex === questions.length - 1 ? "Show Results" : "Next"}
+            </button>
           </div>
-        )}
-        {!isAnswerChecked ? (
-          <button
-            style={{
-              ...checkBtnStyle,
-              opacity: selectedAnswerIndex === null ? 0.6 : 1,
-              cursor: selectedAnswerIndex === null ? "not-allowed" : "pointer",
-            }}
-            onClick={handleCheckAnswer}
-            disabled={selectedAnswerIndex === null}
-          >
-            Check Answer
-          </button>
-        ) : (
-          <button style={nextBtnStyle} onClick={handleNext}>
-            {currentQuestionIndex === questions.length - 1 ? "Show Results" : "Next"}
-          </button>
         )}
       </div>
     </div>
