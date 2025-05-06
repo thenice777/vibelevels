@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/Layout";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
@@ -17,13 +16,8 @@ const Index = () => {
       steps: 5,
       medals: 5,
       certificates: 1,
-      slug: "vibe-coding-basics"
     },
   ];
-
-  const handleCourseClick = (slug: string) => {
-    navigate(`/courses/${slug}`);
-  };
 
   return (
     <Layout>
@@ -90,7 +84,7 @@ const Index = () => {
           <CourseCard 
             key={courses[0].title}
             {...courses[0]}
-            onClick={() => handleCourseClick(courses[0].slug)}
+            onClick={() => navigate("/unit1")}
           />
           {/* Other cards are locked or hidden */}
         </div>

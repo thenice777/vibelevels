@@ -4,11 +4,8 @@ import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
-  const navigate = useNavigate();
-
   // Course categories with their respective courses
   const courseCategories = [
     {
@@ -21,7 +18,6 @@ const Courses = () => {
           steps: 5,
           medals: 5,
           certificates: 1,
-          slug: "web-dev-pitfalls"
         },
       ]
     },
@@ -35,7 +31,6 @@ const Courses = () => {
           steps: 5,
           medals: 5,
           certificates: 1,
-          slug: "project-architecture"
         },
       ]
     },
@@ -49,7 +44,6 @@ const Courses = () => {
           steps: 5,
           medals: 5,
           certificates: 1,
-          slug: "ai-dev-tools"
         },
       ]
     },
@@ -57,11 +51,6 @@ const Courses = () => {
 
   // User stats (medals count)
   const userMedals = 10;
-
-  // Handle course click navigation
-  const handleCourseClick = (slug: string) => {
-    navigate(`/courses/${slug}`);
-  };
 
   return (
     <Layout>
@@ -92,11 +81,7 @@ const Courses = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-6">{category.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {category.courses.map((course, courseIndex) => (
-                <CourseCard 
-                  key={courseIndex} 
-                  {...course} 
-                  onClick={() => handleCourseClick(course.slug)}
-                />
+                <CourseCard key={courseIndex} {...course} />
               ))}
             </div>
           </div>
