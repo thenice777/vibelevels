@@ -1,6 +1,7 @@
+
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Quiz from "../components/Quiz";
+import Quiz from "../components/quiz/Quiz";
 import { Layout } from "@/components/Layout";
 
 const Unit1Quiz: React.FC = () => {
