@@ -18,7 +18,7 @@ Vibelevels is an educational platform designed to help developers learn how to e
 
 ## Live Demo
 
-Visit [vibelevels.lovable.dev](https://vibelevels.lovable.dev) to see the live application.
+Preview Link https://preview--vibelevels-96.lovable.app/
 
 ## Built With
 
