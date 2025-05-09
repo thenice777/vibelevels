@@ -4,8 +4,11 @@ import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
+  const navigate = useNavigate();
+  
   // Course categories with their respective courses
   const courseCategories = [
     {
@@ -81,7 +84,19 @@ const Courses = () => {
             <h2 className="text-2xl font-semibold text-foreground mb-6">{category.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {category.courses.map((course, courseIndex) => (
-                <CourseCard key={courseIndex} {...course} />
+                <CourseCard 
+                  key={courseIndex} 
+                  {...course} 
+                  onClick={() => {
+                    // Navigate based on course title
+                    if (course.title === "web dev pitfalls" || course.title === "Vibe Coding Basics") {
+                      navigate("/unit1");
+                    } else {
+                      // For future courses, can add different paths
+                      navigate("/unit1");
+                    }
+                  }}
+                />
               ))}
             </div>
           </div>
