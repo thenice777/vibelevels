@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -10,7 +11,10 @@ export const Footer = () => {
             <p className="text-muted-foreground">
               Go from 0 to 1 fast with vibelevels, designed to get you from idea to product in less than an hour.
             </p>
-            <p className="text-xs text-muted-foreground">v0.0.2</p>
+            <div className="space-y-1">
+              <p className="text-xs text-muted-foreground">made with unconditional ❤️ for free education</p>
+              <p className="text-xs text-muted-foreground">v0.0.3</p>
+            </div>
           </div>
           
           <div>
