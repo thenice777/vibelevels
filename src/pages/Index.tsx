@@ -1,8 +1,10 @@
+
 import { Layout } from "@/components/Layout";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
+import { ValueProposition } from "@/components/ValueProposition";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -63,6 +65,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Value Proposition Section */}
+      <ValueProposition />
 
       {/* Courses Section */}
       <section className="container mx-auto px-4 py-20 md:py-24">
