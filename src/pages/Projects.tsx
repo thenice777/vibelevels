@@ -78,6 +78,14 @@ const Projects = () => {
     }
   };
 
+  // Function to navigate to available projects tab
+  const navigateToAvailableProjects = () => {
+    const availableTabButton = document.querySelector('button[value="available"]') as HTMLElement;
+    if (availableTabButton) {
+      availableTabButton.click();
+    }
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-6">
@@ -181,7 +189,7 @@ const Projects = () => {
                 </p>
                 <Button 
                   variant="outline" 
-                  onClick={() => document.querySelector('button[value="available"]')?.click()}
+                  onClick={navigateToAvailableProjects}
                 >
                   browse available projects
                 </Button>
@@ -203,7 +211,7 @@ const Projects = () => {
                 </p>
                 <Button 
                   variant="outline" 
-                  onClick={() => document.querySelector('button[value="available"]')?.click()}
+                  onClick={navigateToAvailableProjects}
                 >
                   browse available projects
                 </Button>
