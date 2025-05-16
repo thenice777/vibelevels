@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight, Check, Code, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Check, Code, Sparkles, Star, Briefcase, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +35,13 @@ export const ValueProposition = () => {
             <p className="text-muted-foreground mb-4">
               Break the passive tutorial cycle with hands-on interactive challenges that build real-world skills
             </p>
+            <Button 
+              variant="link" 
+              className="p-0 text-primary"
+              onClick={() => navigate('/courses')}
+            >
+              explore courses <ArrowRight className="h-4 w-4 ml-1" />
+            </Button>
           </div>
 
           {/* Card 2 - Interest */}
@@ -46,17 +53,31 @@ export const ValueProposition = () => {
             <p className="text-muted-foreground mb-4">
               Develop the critical skill of collaborative coding with AI tools that employers are desperately seeking
             </p>
+            <Button 
+              variant="link" 
+              className="p-0 text-primary"
+              onClick={() => navigate('/courses')}
+            >
+              view AI courses <ArrowRight className="h-4 w-4 ml-1" />
+            </Button>
           </div>
 
-          {/* Card 3 - Desire */}
+          {/* Card 3 - Desire - Updated with link to Projects */}
           <div className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
             <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <Star className="h-6 w-6 text-primary" />
+              <Briefcase className="h-6 w-6 text-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Earn while you learn</h3>
             <p className="text-muted-foreground mb-4">
               Build a portfolio of real projects that showcase your skills to potential employers
             </p>
+            <Button 
+              variant="link" 
+              className="p-0 text-primary"
+              onClick={() => navigate('/projects')}
+            >
+              explore projects <ArrowRight className="h-4 w-4 ml-1" />
+            </Button>
           </div>
         </div>
 
@@ -78,20 +99,29 @@ export const ValueProposition = () => {
             </div>
             <div className="flex items-start gap-2">
               <Check className="h-5 w-5 text-primary mt-1 shrink-0" />
-              <p className="text-sm text-muted-foreground">Community support and mentorship from experienced developers</p>
+              <p className="text-sm text-muted-foreground">
+                <span className="text-primary cursor-pointer" onClick={() => navigate('/mentorship')}>Community support and mentorship</span> from experienced developers
+              </p>
             </div>
           </div>
 
           {/* Call to Action - Action */}
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button 
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6"
               onClick={() => navigate('/courses')}
             >
               start learning now <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
-            <p className="text-xs text-muted-foreground mt-2">Join thousands of developers already leveling up their careers</p>
+            <Button 
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary/10"
+              onClick={() => navigate('/mentorship')}
+            >
+              <MessageCircle className="mr-1 h-4 w-4" /> join our community
+            </Button>
           </div>
+          <p className="text-xs text-muted-foreground mt-2 text-center">Join thousands of developers already leveling up their careers</p>
         </div>
       </div>
     </section>

@@ -1,9 +1,8 @@
-
 import { Layout } from "@/components/Layout";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronRight, ArrowRight, Briefcase, MessageCircle } from "lucide-react";
 import { ValueProposition } from "@/components/ValueProposition";
 
 const Index = () => {
@@ -92,6 +91,45 @@ const Index = () => {
             onClick={() => navigate("/unit1")}
           />
           {/* Other cards are locked or hidden */}
+        </div>
+      </section>
+
+      {/* New Featured Sections Grid */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Earn While You Learn Box */}
+          <div className="bg-gradient-to-br from-[#2A2F3C]/30 to-[#292F45]/60 dark:from-[#1A1F2C]/60 dark:to-[#192035]/80 rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-2xl font-bold text-foreground">earn while you learn</h3>
+              <Briefcase className="h-5 w-5 text-primary" />
+            </div>
+            <p className="text-muted-foreground mb-6">
+              Build your portfolio with real-world projects that pay while gaining practical experience aligned with industry demands.
+            </p>
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => navigate('/projects')}
+            >
+              explore projects <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </div>
+          
+          {/* Community Support Box */}
+          <div className="bg-gradient-to-br from-[#2A2F3C]/30 to-[#292F45]/60 dark:from-[#1A1F2C]/60 dark:to-[#192035]/80 rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-2xl font-bold text-foreground">community & mentorship</h3>
+              <MessageCircle className="h-5 w-5 text-primary" />
+            </div>
+            <p className="text-muted-foreground mb-6">
+              Connect with experienced developers who provide guidance, feedback, and support throughout your learning journey.
+            </p>
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => navigate('/mentorship')}
+            >
+              join community <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </section>
 

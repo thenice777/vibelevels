@@ -18,6 +18,8 @@ import BlogPost from "./pages/BlogPost";
 import Community from "./pages/Community";
 import Dashboard from "./pages/Dashboard";
 import Achievements from "./pages/Achievements";
+import Projects from "./pages/Projects";
+import Mentorship from "./pages/Mentorship";
 
 // FAQ Pages
 import FAQ from "./pages/FAQ";
@@ -51,6 +53,8 @@ const App = () => (
           <Route path="/community" element={<Community />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/achievements" element={<Achievements />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/mentorship" element={<Mentorship />} />
           
           {/* FAQ Routes */}
           <Route path="/faq" element={<FAQ />} />
