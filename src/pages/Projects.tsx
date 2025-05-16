@@ -1,15 +1,13 @@
-
 import { Layout } from "@/components/Layout";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  Briefcase, ArrowRight, Star, MessageCircle, BookOpen
-} from "lucide-react";
+import { Briefcase, ArrowRight, Star, Home } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Home } from "lucide-react";
+import { ProjectsList } from "@/components/projects/ProjectsList";
+import { EmptyState } from "@/components/projects/EmptyState";
+import { InfoSection } from "@/components/projects/InfoSection";
+import { Project } from "@/components/projects/ProjectCard";
 
 // Dummy data for projects
 const PROJECTS_DATA = {
@@ -126,135 +124,51 @@ const Projects = () => {
           </TabsList>
           
           <TabsContent value="available">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PROJECTS_DATA.available.map(project => (
-                <Card key={project.id} className="border-white/10 bg-card hover:shadow-md transition-all">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <Badge className={`${getBadgeColor(project.level)} font-medium`}>
-                        {project.level}
-                      </Badge>
-                      <div className="text-sm text-primary font-semibold">{project.compensation}</div>
-                    </div>
-
-                    <h3 className="font-semibold text-xl mb-2 text-foreground">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.skills.map(skill => (
-                        <Badge key={skill} variant="outline" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between text-sm mb-4">
-                      <div className="flex items-center">
-                        <img 
-                          src={project.companyLogo} 
-                          alt={project.companyName}
-                          className="w-5 h-5 mr-2 rounded-full"
-                        />
-                        <span className="text-muted-foreground">{project.companyName}</span>
-                      </div>
-                      <div className="text-muted-foreground">
-                        Timeline: {project.timeline}
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="p-4 pt-0">
-                    <Button 
-                      className="w-full bg-primary hover:bg-primary/90" 
-                      onClick={() => applyForProject(project.id)}
-                    >
-                      apply for project
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+            <ProjectsList 
+              projects={PROJECTS_DATA.available as Project[]} 
+              onApply={applyForProject}
+              getBadgeColor={getBadgeColor}
+            />
           </TabsContent>
 
           <TabsContent value="inProgress">
             {PROJECTS_DATA.inProgress.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Project cards would be rendered here */}
-              </div>
+              <ProjectsList 
+                projects={PROJECTS_DATA.inProgress as Project[]} 
+                onApply={applyForProject}
+                getBadgeColor={getBadgeColor}
+              />
             ) : (
-              <div className="text-center py-16">
-                <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-                <h3 className="text-lg font-medium mb-2">No projects in progress</h3>
-                <p className="text-muted-foreground mb-6">
-                  Apply for projects to start building your portfolio
-                </p>
-                <Button 
-                  variant="outline" 
-                  onClick={navigateToAvailableProjects}
-                >
-                  browse available projects
-                </Button>
-              </div>
+              <EmptyState 
+                icon={Briefcase}
+                title="No projects in progress"
+                description="Apply for projects to start building your portfolio"
+                buttonText="browse available projects"
+                onButtonClick={navigateToAvailableProjects}
+              />
             )}
           </TabsContent>
 
           <TabsContent value="completed">
             {PROJECTS_DATA.completed.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Project cards would be rendered here */}
-              </div>
+              <ProjectsList 
+                projects={PROJECTS_DATA.completed as Project[]} 
+                onApply={applyForProject}
+                getBadgeColor={getBadgeColor}
+              />
             ) : (
-              <div className="text-center py-16">
-                <Star className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-                <h3 className="text-lg font-medium mb-2">No completed projects yet</h3>
-                <p className="text-muted-foreground mb-6">
-                  Complete projects to showcase your skills
-                </p>
-                <Button 
-                  variant="outline" 
-                  onClick={navigateToAvailableProjects}
-                >
-                  browse available projects
-                </Button>
-              </div>
+              <EmptyState 
+                icon={Star}
+                title="No completed projects yet"
+                description="Complete projects to showcase your skills"
+                buttonText="browse available projects"
+                onButtonClick={navigateToAvailableProjects}
+              />
             )}
           </TabsContent>
         </Tabs>
 
-        {/* Information Section */}
-        <div className="bg-secondary/20 border border-border rounded-xl p-8 mb-12">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">how it works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-              <div className="text-center">
-                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-primary">1</span>
-                </div>
-                <h3 className="font-medium mb-2">apply for projects</h3>
-                <p className="text-sm text-muted-foreground">
-                  Browse and apply for projects that match your skills and interests
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-primary">2</span>
-                </div>
-                <h3 className="font-medium mb-2">complete the work</h3>
-                <p className="text-sm text-muted-foreground">
-                  Work with guidance from mentors to deliver high-quality results
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-primary">3</span>
-                </div>
-                <h3 className="font-medium mb-2">get paid & showcase</h3>
-                <p className="text-sm text-muted-foreground">
-                  Earn compensation and add your work to your professional portfolio
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <InfoSection />
       </div>
     </Layout>
   );
