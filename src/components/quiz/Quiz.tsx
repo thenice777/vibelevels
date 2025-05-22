@@ -11,15 +11,23 @@ interface QuizProps {
   onComplete?: (score: number, total: number) => void;
 }
 
-// Style constant extracted from the original Quiz.tsx
-const darkTheme: React.CSSProperties = {
-  background: "#181a20",
+// Style constants
+const quizContainerStyle: React.CSSProperties = {
   color: "#f1f1f1",
-  minHeight: "100vh",
   padding: 24,
   borderRadius: 12,
   fontFamily: 'Inter, system-ui, sans-serif',
+  maxWidth: 720,
+  margin: "0 auto"
 };
+
+const educationalTips = [
+  "Take time to understand why the correct answer is right, not just which answer is correct.",
+  "Knowledge isn't just about memorization—apply these concepts in your projects.",
+  "If you're unsure about a question, try eliminating obviously incorrect options first.",
+  "Remember: practical experience reinforces what you learn in quizzes.",
+  "Always review explanations, even for questions you got right."
+];
 
 const Quiz: React.FC<QuizProps> = ({
   unitKey = "unit1",
@@ -83,6 +91,8 @@ const Quiz: React.FC<QuizProps> = ({
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [startTime] = useState<Date>(new Date());
+  const [tipIndex] = useState<number>(Math.floor(Math.random() * educationalTips.length));
 
   // Reset all state (for restart)
   const resetQuiz = () => {
@@ -94,15 +104,26 @@ const Quiz: React.FC<QuizProps> = ({
     setShowResults(false);
   };
 
+  const handleComplete = (finalScore: number) => {
+    const endTime = new Date();
+    const timeTaken = Math.round((endTime.getTime() - startTime.getTime()) / 1000);
+    
+    console.log(`Quiz completed in ${timeTaken} seconds with score: ${finalScore}/${questions.length}`);
+    
+    if (typeof onComplete === "function") {
+      onComplete(finalScore, questions.length);
+    }
+  };
+
   if (error) {
     return (
-      <div style={darkTheme}>
+      <div style={quizContainerStyle}>
         <div style={{ 
           background: "#22242b",
           borderRadius: 10,
           padding: 24,
-          margin: "0 auto 24px auto",
-          maxWidth: 480,
+          margin: "0 auto",
+          maxWidth: 580,
           boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
           border: "2px solid #ff5f56", 
           color: "#ff5f56" 
@@ -115,13 +136,27 @@ const Quiz: React.FC<QuizProps> = ({
 
   if (showResults) {
     return (
-      <div style={darkTheme}>
+      <div style={quizContainerStyle}>
         <QuizResults 
           score={score}
           totalQuestions={questions.length}
           title={title}
           onRestart={resetQuiz}
         />
+        
+        <div style={{
+          marginTop: 24,
+          padding: 16,
+          borderRadius: 8,
+          background: "rgba(55, 99, 244, 0.1)",
+          border: "1px solid rgba(55, 99, 244, 0.2)",
+          fontSize: 15,
+          color: "#bfcfff",
+          textAlign: "center",
+          fontStyle: "italic"
+        }}>
+          <span style={{ fontWeight: 600 }}>Education Tip:</span> {educationalTips[tipIndex]}
+        </div>
       </div>
     );
   }
@@ -143,9 +178,7 @@ const Quiz: React.FC<QuizProps> = ({
   const handleNext = () => {
     if (currentQuestionIndex === questions.length - 1) {
       setShowResults(true);
-      if (typeof onComplete === "function") {
-        onComplete(score, questions.length);
-      }
+      handleComplete(score + (isCorrect ? 1 : 0));
     } else {
       setCurrentQuestionIndex((i) => i + 1);
       setSelectedAnswerIndex(null);
@@ -155,7 +188,7 @@ const Quiz: React.FC<QuizProps> = ({
   };
 
   return (
-    <div style={darkTheme}>
+    <div style={quizContainerStyle}>
       <QuizCard 
         title={title}
         currentQuestionIndex={currentQuestionIndex}

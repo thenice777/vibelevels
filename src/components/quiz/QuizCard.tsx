@@ -22,14 +22,15 @@ interface QuizCardProps {
   onNext: () => void;
 }
 
-// Style constants extracted from Quiz.tsx
 const cardStyle: React.CSSProperties = {
-  background: "#22242b",
-  borderRadius: 10,
-  padding: 24,
+  background: "var(--quiz-card-bg, #22242b)",
+  borderRadius: 12,
+  padding: 28,
   margin: "0 auto 24px auto",
-  maxWidth: 480,
-  boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+  maxWidth: 580,
+  boxShadow: "0 3px 12px rgba(0,0,0,0.25)",
+  border: "1px solid rgba(255,255,255,0.05)",
+  transition: "all 0.3s ease"
 };
 
 const QuizCard: React.FC<QuizCardProps> = ({
@@ -55,15 +56,23 @@ const QuizCard: React.FC<QuizCardProps> = ({
 
   return (
     <div style={cardStyle}>
-      <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 20, fontWeight: 600, marginBottom: 10, color: "var(--quiz-title, #f1f1f1)" }}>
+        {title}
+      </div>
       <QuizProgress 
         currentQuestionIndex={currentQuestionIndex} 
         totalQuestions={questions.length} 
       />
-      <div style={{ fontSize: 17, fontWeight: 500, margin: "16px 0 10px 0" }}>
+      <div style={{ 
+        fontSize: 18, 
+        fontWeight: 500, 
+        margin: "18px 0 14px 0", 
+        lineHeight: 1.5,
+        color: "var(--quiz-question, #f1f1f1)"
+      }}>
         {currentQuestion.question}
       </div>
-      <div>
+      <div className="options-container" style={{ marginBottom: 20 }}>
         {currentQuestion.options.map((opt, idx) => {
           const isSelected = selectedAnswerIndex === idx;
           const isCorrectOpt = isAnswerChecked && idx === currentQuestion.correctAnswer;
@@ -91,6 +100,20 @@ const QuizCard: React.FC<QuizCardProps> = ({
           onNext={onNext}
         />
       )}
+      <div className="quiz-tips" style={{ 
+        fontSize: 13, 
+        color: "var(--quiz-tips, #8b8fa3)", 
+        marginTop: isAnswerChecked ? 16 : 10,
+        fontStyle: "italic",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+        {isAnswerChecked ? 
+          "Read the explanation carefully to enhance your understanding" : 
+          "Select the best answer based on vibe coding best practices"
+        }
+      </div>
     </div>
   );
 };

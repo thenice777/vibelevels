@@ -1,3 +1,4 @@
+
 {
   "course": "Vibe Coding",
   "unit1": {
@@ -14,11 +15,11 @@
         "level": 1,
         "title": "Introduction to Vibe Coding",
         "quiz": {
-          "title": "Vibe Coding Basics",
+          "title": "Vibe Coding Fundamentals",
           "questions": [
             {
               "id": "1-1-1",
-              "question": "What is vibe coding?",
+              "question": "What is the most accurate definition of vibe coding?",
               "options": [
                 "Traditional programming with a focus on aesthetics",
                 "AI-driven software development through conversation with AI tools",
@@ -26,463 +27,329 @@
                 "Programming with a team of remote developers"
               ],
               "correctAnswer": 1,
-              "explanation": "Vibe coding is about leveraging AI assistants to create software by expressing your needs conversationally rather than writing all code manually."
+              "explanation": "Vibe coding is about leveraging AI assistants to create software through conversation rather than writing all code manually, making development more accessible and often faster."
             },
             {
               "id": "1-1-2",
-              "question": "Which of the following is NOT a typical benefit of vibe coding?",
+              "question": "According to experienced AI developers, what principle best describes the relationship between prompt quality and output quality?",
               "options": [
-                "Faster development time",
-                "Lower barrier to entry for non-programmers",
-                "Guaranteed bug-free code",
-                "Ability to create functional prototypes without deep technical knowledge"
+                "The shorter the prompt, the better the output",
+                "Garbage in, garbage out",
+                "AI always produces perfect code regardless of the prompt",
+                "Prompts should always be as technical as possible"
               ],
-              "correctAnswer": 2,
-              "explanation": "While vibe coding can produce working code more easily, no development approach guarantees bug-free code. You still need to test and validate the output."
+              "correctAnswer": 1,
+              "explanation": "The 'garbage in, garbage out' principle highlights that the quality of your prompts directly impacts the quality of the AI's output. Clear, detailed prompts lead to better results."
             },
             {
               "id": "1-1-3",
-              "question": "What is the BIGGEST mistake in vibe coding according to industry experts?",
+              "question": "What step should precede actual coding when using AI tools for development?",
               "options": [
-                "Using too many different AI tools together",
-                "Blindly accepting AI-generated code without understanding it",
-                "Spending too much time crafting perfect prompts",
-                "Using AI for simple tasks that could be done manually"
+                "Setting up a GitHub repository",
+                "Learning advanced programming concepts",
+                "Defining a clear vision and planning UI/UX",
+                "Writing test cases"
               ],
-              "correctAnswer": 1,
-              "explanation": "Blindly accepting AI-generated code without reviewing or understanding it is considered the biggest mistake, as it can introduce hidden bugs, security flaws, and inefficient solutions."
+              "correctAnswer": 2,
+              "explanation": "Before coding begins, developers should have a clear vision of what they want to build and plan the UI/UX carefully. This foundation helps AI tools understand the goals and produce relevant code."
             },
             {
               "id": "1-1-4",
-              "question": "What should you do BEFORE accepting AI-generated code?",
+              "question": "Which approach is recommended when building complex features with AI coding tools?",
               "options": [
-                "Always ask 'Why is it done this way?' and understand the approach",
-                "Immediately push it to production to save time",
-                "Copy-paste it from one AI tool to another for verification",
-                "Compare it to code on Stack Overflow"
+                "Use a single, comprehensive prompt describing the entire feature",
+                "Break down the feature into smaller, manageable components",
+                "Let the AI decide how to approach the feature",
+                "Focus only on the UI aspects first, then add functionality later"
               ],
-              "correctAnswer": 0,
-              "explanation": "You should review the code, understand why specific approaches were taken, and treat the AI as a collaborator rather than an oracle. This helps prevent issues and improves your own understanding."
+              "correctAnswer": 1,
+              "explanation": "Breaking down complex features into smaller, manageable requests prevents AI hallucination and produces better results than attempting to build an entire feature in one prompt."
             },
             {
               "id": "1-1-5",
-              "question": "True or False: With vibe coding, you never need to understand any programming concepts.",
+              "question": "What is the recommended approach when an AI generates code with errors or goes in the wrong direction?",
               "options": [
-                "True",
-                "False"
+                "Keep working with the incorrect code and fix it incrementally",
+                "Switch to a different AI tool immediately",
+                "Restart with a refined prompt rather than building on flawed code",
+                "Always manually code any sections where the AI made errors"
               ],
-              "correctAnswer": 1,
-              "explanation": "While vibe coding reduces the need for programming expertise, understanding basic concepts helps you communicate effectively with AI tools and evaluate their output. Strong coding fundamentals actually make you a better AI collaborator."
+              "correctAnswer": 2,
+              "explanation": "When an AI produces incorrect code, it's often more efficient to refine your prompt and restart rather than trying to fix the errors incrementally, as the AI may introduce new issues while trying to fix existing ones."
             }
           ]
         }
       },
       {
         "level": 2,
-        "title": "Effective Communication & Code Review",
+        "title": "Context Management & Error Handling",
         "quiz": {
-          "title": "Crafting Effective Requests & Reviewing AI Code",
+          "title": "Mastering Context & Debugging",
           "questions": [
             {
               "id": "1-2-1",
-              "question": "Which of the following prompts would likely produce the most useful response?",
+              "question": "Which of these is most important when providing context to an AI coding assistant?",
               "options": [
-                "Make me a website",
-                "Create a registration form",
-                "Build a user registration form with email validation that stores data in a database",
-                "I need a HTML form for registration"
+                "Including every file in your codebase",
+                "Providing only the most relevant files that will be modified",
+                "Always starting with a clean context for each request",
+                "Only providing TypeScript type definitions"
               ],
-              "correctAnswer": 2,
-              "explanation": "The most effective prompts include specific requirements, functionality, and context about how components connect to other parts of the system."
+              "correctAnswer": 1,
+              "explanation": "Providing relevant context is crucial - too little context leads to errors, but too much overwhelms the AI. Focus on sharing the specific files that will be modified or are directly relevant to your request."
             },
             {
               "id": "1-2-2",
-              "question": "How can you best improve your prompts according to industry experts?",
+              "question": "When should you start a new chat session with an AI coding assistant?",
               "options": [
-                "Make them as long and detailed as possible",
-                "Include constraints like 'optimize for readability' or 'write testable code'",
-                "Always specify the exact functions and variable names to use",
-                "Ask for the most complex solution possible"
+                "After every successful code generation",
+                "Only when switching projects",
+                "When the chat gets very large and context is being lost",
+                "Never, as context is important for continuity"
               ],
-              "correctAnswer": 1,
-              "explanation": "Smart prompting includes providing clear constraints and quality guidelines. This helps the AI understand your priorities and produce more suitable code."
+              "correctAnswer": 2,
+              "explanation": "When a chat becomes too large, the AI's context window becomes filled and it may forget earlier patterns or requirements. Starting fresh with a brief summary of what you're working on helps maintain quality."
             },
             {
               "id": "1-2-3",
-              "question": "You notice the AI has generated code that doesn't quite match your needs. What is the BEST approach?",
+              "question": "What is the recommended approach for debugging persistent errors that the AI can't solve after multiple attempts?",
               "options": [
-                "Start over with a completely new prompt",
-                "Accept the code as-is and try to modify it manually",
-                "Provide specific feedback about what's missing or incorrect and ask for revisions",
-                "Change to a different AI tool immediately"
+                "Always rewrite the entire component from scratch",
+                "Ask the AI to analyze components and add strategic logging statements",
+                "Immediately switch to manual coding without AI",
+                "Try a completely different implementation approach without investigation"
               ],
-              "correctAnswer": 2,
-              "explanation": "Iterative refinement is a key part of vibe coding. Specific feedback helps the AI understand what needs to change without starting from scratch."
+              "correctAnswer": 1,
+              "explanation": "For stubborn errors, a systematic approach helps: ask the AI to review components for potential issues, add strategic logging, and then provide those logs back to the AI to help it diagnose the problem more effectively."
             },
             {
               "id": "1-2-4",
-              "question": "What should you do when you don't understand the AI-generated code?",
+              "question": "How can you help an AI model maintain consistency across components in a large project?",
               "options": [
-                "Use it anyway since the AI knows best",
-                "Rewrite it completely from scratch",
-                "Ask the AI to explain the code and treat it as a learning opportunity",
-                "Find a different AI tool that generates more obvious code"
+                "Rewrite your entire codebase frequently",
+                "Use a different AI for each component",
+                "Reference existing similar components when requesting new ones",
+                "Keep all components in a single file"
               ],
               "correctAnswer": 2,
-              "explanation": "If you don't understand the AI's output, ask it to explain. This helps you learn and ensures you're not implementing code you don't understand."
+              "explanation": "Showing the AI examples of existing components helps it pick up on your patterns and maintain consistency across the codebase, reducing the need for rework and standardizing your approach."
             },
             {
               "id": "1-2-5",
-              "question": "What tool would be MOST helpful in preventing inconsistencies when using AI-generated code across a team?",
+              "question": "Which tool combination is recommended for iterative code review in an AI-assisted workflow?",
               "options": [
-                "A bigger AI model",
-                "Automated tools like linters, formatters, and code review assistants",
-                "Manually reviewing each other's code",
-                "Using a different AI for each team member"
+                "Use the same AI tool for both development and review",
+                "Use Gemini for security review then apply fixes with Claude/Cursor",
+                "Rely solely on automated linting tools",
+                "Have a human reviewer check all AI-generated code"
               ],
               "correctAnswer": 1,
-              "explanation": "Tools like linters (ESLint, Prettier) and automated code review tools can enforce consistent style and structure even when code comes from different AI sessions or team members."
+              "explanation": "A powerful workflow is to use Gemini's large context window to review code for security issues or bad patterns, then use Claude in Cursor to implement the suggested fixes, creating an iterative improvement cycle."
             }
           ]
         }
       },
       {
         "level": 3,
-        "title": "Problem Solving & Avoiding Common Pitfalls",
+        "title": "Project Organization & Best Practices",
         "quiz": {
-          "title": "Technical Requirements & Planning",
+          "title": "Technical Planning & Architecture",
           "questions": [
             {
               "id": "1-3-1",
-              "question": "From a project management perspective, which requirement would be MOST important to specify early in a vibe coding project?",
+              "question": "Why is Git described as 'your best friend' when working with AI coding tools?",
               "options": [
-                "The exact color palette and font choices",
-                "The authentication and user permission system",
-                "The specific animation effects for UI elements",
-                "The exact dimensions of all UI components"
+                "It automatically fixes AI-generated code errors",
+                "It allows easy rollback when AI makes destructive changes",
+                "It generates better prompts for AI tools",
+                "It replaces the need for AI tools entirely"
               ],
               "correctAnswer": 1,
-              "explanation": "Authentication and permissions affect the entire application architecture and are difficult to add later. Starting with this requirement helps avoid major refactoring."
+              "explanation": "Version control with Git is essential when working with AI tools because it allows you to easily revert to a working state if the AI introduces errors or makes unwanted changes that break your codebase."
             },
             {
               "id": "1-3-2",
-              "question": "Which problem with AI-generated code is related to 'overengineering'?",
+              "question": "Which tech stack is particularly well-suited for AI-assisted development according to experienced developers?",
               "options": [
-                "The code is too simple to work properly",
-                "The AI produces 'textbook-perfect' solutions that are more complex than necessary",
-                "The code doesn't handle edge cases",
-                "The code is too focused on one specific use case"
+                "Angular with MongoDB and Express",
+                "Next.js with Supabase, Tailwind CSS, and Vercel",
+                "Vue.js with Firebase",
+                "Ruby on Rails with PostgreSQL"
               ],
               "correctAnswer": 1,
-              "explanation": "AI often produces technically correct but overly complex solutions. Not every problem needs a scalable distributed system on day one - pushing for simplicity is important."
+              "explanation": "Next.js, Supabase, Tailwind CSS, and Vercel form a modern stack that's well-documented, widely used (meaning AI tools understand it well), and reduces boilerplate code, making it ideal for AI-assisted development."
             },
             {
               "id": "1-3-3",
-              "question": "What's the MOST important action to take regarding security when using vibe coding?",
+              "question": "What is the purpose of maintaining an 'Instructions Folder' in your project?",
               "options": [
-                "Trust that AI always produces secure code",
-                "Always threat-model new code sections and use AI-assisted security tools",
-                "Only use AI for frontend code, never backend",
-                "Avoid using AI for any security-related features"
+                "To store user documentation",
+                "To provide examples and documentation that guide the AI",
+                "To keep track of deployment instructions",
+                "To document API endpoints"
               ],
               "correctAnswer": 1,
-              "explanation": "Security oversight is a common issue with AI-generated code. Always threat-model new sections, use security tools, and specifically prompt the AI about security improvements."
+              "explanation": "An Instructions Folder with markdown files and component examples provides consistent guidance to AI tools, helping them understand your project patterns and requirements more effectively."
             },
             {
               "id": "1-3-4",
-              "question": "What problem occurs when an AI assistant 'loses context' during vibe coding?",
+              "question": "What should you maintain to help prevent AI tools from making the same mistakes repeatedly?",
               "options": [
-                "It generates code that doesn't integrate well into the bigger system",
-                "It uses the wrong programming language",
-                "It creates security vulnerabilities",
-                "It makes the code too simple"
+                "A complex prompt template",
+                "Multiple AI assistants for different tasks",
+                "A 'Common AI Mistakes' file to reference in prompts",
+                "Weekly retraining of the AI model"
               ],
-              "correctAnswer": 0,
-              "explanation": "When AI loses project context, it produces code that doesn't integrate well with the larger system. This is why continuously re-feeding important project files into your AI session is important."
+              "correctAnswer": 2,
+              "explanation": "Keeping a file of common mistakes that your AI tool tends to make and referencing it in your prompts helps prevent the AI from repeating those errors, saving time and frustration."
             },
             {
               "id": "1-3-5",
-              "question": "What critical element is MOST commonly overlooked when developers are vibe coding quickly?",
+              "question": "Which security practice is MOST important when handling sensitive data in AI-assisted development?",
               "options": [
-                "Code comments",
-                "Visual design elements",
-                "Testing (unit tests and integration tests)",
-                "Variable naming"
+                "Putting all API keys directly in frontend code for easier access",
+                "Keeping secrets server-side only using environment variables",
+                "Sharing sensitive information in every prompt for context",
+                "Displaying detailed error messages to help with debugging"
               ],
-              "correctAnswer": 2,
-              "explanation": "Testing is frequently overlooked in vibe coding. Make it a habit to prompt the AI to generate unit tests and integration tests alongside the code, and always validate outputs manually before merging."
+              "correctAnswer": 1,
+              "explanation": "Sensitive data like API keys should never be in frontend code. Keep secrets server-side only, using environment variables and ensuring your .env file is in .gitignore, as AI tools might not always recognize sensitive information."
             }
           ]
         }
       }
     ],
     "challenge": {
-      "title": "Project Planning & Responsible Vibe Coding",
-      "description": "You've been asked to create a membership site for a fitness studio. Using vibe coding, you need to plan the development approach.",
+      "title": "Professional Vibe Coding Implementation",
+      "description": "You're tasked with building a SaaS application with a team using AI tools. Apply your knowledge to implement best practices for collaboration.",
       "questions": [
         {
           "id": "1-c-1",
-          "question": "In what order would you develop these components?",
+          "question": "Your team is starting a new project using AI tools. What should be established FIRST?",
           "options": [
-            "User interface → Payment processing → User authentication → Workout database",
-            "User authentication → Workout database → User interface → Payment processing",
-            "Workout database → User interface → User authentication → Payment processing",
-            "User interface → Workout database → Payment processing → User authentication"
+            "Setting up the GitHub repository structure",
+            "A clear vision document and UI/UX plan",
+            "Choosing which AI tools each team member will use",
+            "Writing the first lines of code with AI assistance"
           ],
           "correctAnswer": 1,
-          "explanation": "Starting with authentication establishes user identity which affects all other components. The database structure should be defined early as it influences the interface design."
+          "explanation": "Before diving into code, establish a clear vision and UI/UX plan that all team members understand. This creates alignment and provides consistent guidance for AI tools, regardless of which team member is writing prompts."
         },
         {
           "id": "1-c-2",
-          "question": "Which of these would be the MOST effective initial prompt to the AI?",
+          "question": "What's the most effective way to maintain consistency across components when multiple team members are using AI tools?",
           "options": [
-            "Build me a fitness website with lots of features",
-            "I need a membership site for a fitness studio. It needs to have user authentication, display workout videos from a database, and process monthly subscription payments. Let's start by planning the data model and user authentication system.",
-            "Create a beautiful fitness site with videos and payments",
-            "Code a React fitness application with MongoDB and Stripe integration"
+            "Each developer should use their preferred styling approach",
+            "Set up linting rules and formatter tools, and create a shared Cursor Rules file",
+            "Restrict AI usage to a single team member",
+            "Manually review and fix inconsistencies at the end of development"
           ],
           "correctAnswer": 1,
-          "explanation": "This prompt provides context, identifies key components, and suggests a logical starting point focusing on architecture before implementation."
+          "explanation": "A shared Cursor Rules file with established patterns, combined with automated linting and formatting tools, ensures consistency across the codebase regardless of which developer worked on which component with AI assistance."
         },
         {
           "id": "1-c-3",
-          "question": "What should you include in your development workflow to safely use vibe coding in a team environment?",
+          "question": "A team member has generated code that works but doesn't follow the project's patterns. What's the BEST approach?",
           "options": [
-            "Only allow one team member to use AI tools",
-            "Set up automated code quality tools like linters, formatters and code review assistants",
-            "Manually review each line of AI-generated code as a full team",
-            "Create separate branches for AI-generated code and human-written code"
+            "Leave it as is since it works",
+            "Completely rewrite it manually",
+            "Ask the AI to refactor it to match established patterns and styles",
+            "Create a new pattern based on this code"
           ],
-          "correctAnswer": 1,
-          "explanation": "Automated tools help enforce consistent style and catch potential issues regardless of whether code is AI-generated or human-written, making this approach scalable across teams."
+          "correctAnswer": 2,
+          "explanation": "AI tools excel at refactoring. Providing existing patterns and asking the AI to refactor the functional but inconsistent code maintains both functionality and consistency, which is essential for maintainable codebases."
         },
         {
           "id": "1-c-4",
-          "question": "Which approach helps prevent code inconsistencies when using vibe coding for a large project?",
+          "question": "Which approach helps prevent security vulnerabilities in AI-generated code?",
           "options": [
-            "Generating the entire application in one large prompt",
-            "Creating separate components with clearly defined responsibilities and integration points",
-            "Using a different AI assistant for each project section",
-            "Limiting AI use to only small helper functions"
+            "Trusting that AI always generates secure code",
+            "Running security scans on generated code and having explicit security checkpoints",
+            "Only using AI for UI components, never backend code",
+            "Rewriting all AI-generated code manually"
           ],
           "correctAnswer": 1,
-          "explanation": "Modular components with clear responsibilities make code more maintainable and easier to update. This architecture-first approach works regardless of whether the code is written by humans or AI."
+          "explanation": "AI tools don't always prioritize security. Explicitly scanning code for vulnerabilities, implementing proper validation, and having security checkpoints ensures AI-generated code doesn't introduce vulnerabilities accidentally."
         },
         {
           "id": "1-c-5",
-          "question": "Your fitness site encounters a bug in AI-generated code. What's the WORST way to approach debugging?",
+          "question": "What's the most efficient workflow for implementing a large feature using AI tools?",
           "options": [
-            "Using console logs to understand the code flow",
-            "Adding unit tests to verify correct behavior",
-            "Asking the AI to debug without understanding the issue yourself ('vibe debugging')",
-            "Reviewing the code to understand its logic before fixing"
+            "Generate the entire feature at once with a single comprehensive prompt",
+            "Create a feature plan, break it into components, implement each separately, then integrate",
+            "Generate random components and connect them later",
+            "Let each team member build their own version and choose the best one"
           ],
-          "correctAnswer": 2,
-          "explanation": "'Vibe debugging' (asking AI to debug without first attempting to understand the issue) can lead to endless loops of problems. Use your skills first and AI as an assistant, not as a replacement for critical thinking."
+          "correctAnswer": 1,
+          "explanation": "Breaking down large features into planned components with clear interfaces between them allows for more focused AI prompts, better quality output, and easier testing and integration of the complete feature."
         }
       ]
     },
     "advancedTopics": [
       {
-        "title": "Multi-Tool Mastery",
+        "title": "AI Tool Selection & Specialization",
         "quiz": {
-          "title": "Advanced Topic: Multi-Tool Mastery",
+          "title": "Advanced Topic: AI Tool Selection",
           "questions": [
             {
               "id": "1-a1-1",
-              "question": "Why is using multiple AI models for different tasks beneficial?",
+              "question": "According to experienced developers, what is Cursor's greatest strength?",
               "options": [
-                "It's easier to manage one tool for everything",
-                "Different AI models excel at different tasks (frontend, debugging, UX writing)",
-                "Using multiple tools impresses clients more",
-                "Multiple AIs can communicate with each other"
+                "UI design and generation",
+                "Backend logic and complex algorithmic tasks",
+                "Database schema design",
+                "Project planning"
               ],
               "correctAnswer": 1,
-              "explanation": "Different AI models have distinct strengths - one might excel at frontend code, another at debugging, and another at UX writing. Combining them strategically creates a more powerful workflow."
+              "explanation": "Cursor particularly excels at backend logic development and complex algorithmic tasks where its contextual understanding of code can significantly speed up development compared to other AI tools."
             },
             {
               "id": "1-a1-2",
-              "question": "Which combination of tools would work BEST for a solo developer building a full-stack application?",
+              "question": "What is the advantage of using Cursor Rules when working on a project?",
               "options": [
-                "Using only ChatGPT for everything",
-                "Using Lovable for UI, Cursor for backend code, and Claude for documentation",
-                "Using Replit for everything",
-                "Avoiding AI tools entirely for better quality"
+                "It automatically writes all code without any input",
+                "It provides guardrails and consistent patterns for the AI to follow",
+                "It bypasses the need for proper planning",
+                "It makes the code compile faster"
               ],
               "correctAnswer": 1,
-              "explanation": "A strategic combination leverages each tool's strengths - Lovable excels at UI generation, Cursor helps with backend code, and Claude can create clear documentation. This combination maximizes efficiency across different project aspects."
+              "explanation": "Cursor Rules act as guardrails for AI, providing consistent patterns, best practices, and technical preferences that help maintain quality and consistency throughout the development process."
             },
             {
               "id": "1-a1-3",
-              "question": "When switching between different AI tools during development, what's MOST important to maintain?",
+              "question": "What's the recommended approach for UI/UX planning when using AI coding tools?",
               "options": [
-                "The same prompt style across all tools",
-                "A detailed log of which tool generated which code",
-                "Project context and consistent architecture vision",
-                "The same programming language across all tools"
+                "Skip planning and let the AI design as it builds",
+                "Use tools like v0 or 21st.dev for visualization before coding",
+                "Always code the UI manually without AI",
+                "Focus only on functionality, not design"
               ],
-              "correctAnswer": 2,
-              "explanation": "Context is fragile in AI systems. When switching between tools, you need to maintain the overall architectural vision and remind each AI of previous decisions and constraints to ensure consistency."
+              "correctAnswer": 1,
+              "explanation": "Tools like v0 or component libraries from 21st.dev help visualize and experiment with layouts early, creating a clear plan before coding begins, which leads to more consistent and effective AI-generated UI components."
             },
             {
               "id": "1-a1-4",
-              "question": "What's the MOST effective role for a human developer when using multiple AI tools?",
+              "question": "When would Google's Gemini 2.5 Pro be most useful in the AI development workflow?",
               "options": [
-                "Code generation",
-                "Project architect who maintains the big picture vision",
-                "Documentation writer",
-                "UI designer"
+                "For writing small UI components",
+                "For initial project planning and code review/security analysis",
+                "For database migrations",
+                "For deployment automation"
               ],
               "correctAnswer": 1,
-              "explanation": "AI struggles to see the big picture. While AI can handle isolated tasks well, humans need to serve as architects who connect the pieces meaningfully and maintain the overall vision that AI cannot sustain."
+              "explanation": "Gemini 2.5 Pro's large context window makes it particularly valuable for initial project planning (structuring thoughts and outlining product goals) and for reviewing large sections of code for security vulnerabilities or optimization opportunities."
             },
             {
               "id": "1-a1-5",
-              "question": "You're working on a project using multiple AI tools. How should you handle version control?",
+              "question": "What's the benefit of using multiple specialized AI tools instead of relying on just one?",
               "options": [
-                "Keep separate repositories for code from each AI",
-                "Add comments indicating which AI generated each code section",
-                "Use standard version control with clear commit messages about functionality, not AI source",
-                "Avoid version control since AI might modify previous code"
-              ],
-              "correctAnswer": 2,
-              "explanation": "Regardless of which AI generates code, focus on functionality in version control. Standard practices like clear commit messages about what the code does (rather than its source) help maintain a coherent codebase."
-            }
-          ]
-        }
-      },
-      {
-        "title": "Tool-Specific Mastery",
-        "quiz": {
-          "title": "Advanced Topic: Tool-Specific Mastery",
-          "questions": [
-            {
-              "id": "1-a2-1",
-              "question": "According to developers who've built with it, what is Lovable's greatest strength?",
-              "options": [
-                "Backend database integration",
-                "Security implementation",
-                "Complete UI generation without touching HTML/CSS directly",
-                "Networking and API integration"
-              ],
-              "correctAnswer": 2,
-              "explanation": "Lovable excels at UI generation, allowing even developers who struggle with frontend to create polished interfaces without directly writing HTML or CSS. It still requires human polish for elements like contrast and spacing."
-            },
-            {
-              "id": "1-a2-2",
-              "question": "What aspect of development is Cursor particularly effective for?",
-              "options": [
-                "UI design and CSS",
-                "Backend logic-heavy development",
-                "Game development",
-                "Database optimization"
+                "It's more impressive to clients",
+                "Different AI models excel at different tasks (planning, UI, logic, security)",
+                "Multiple AIs work faster than one",
+                "It's required for proper licensing"
               ],
               "correctAnswer": 1,
-              "explanation": "Cursor is particularly strong for backend development, especially for logic-heavy tasks where its contextual understanding of code can significantly speed up development."
-            },
-            {
-              "id": "1-a2-3",
-              "question": "What limitation of AI-built UIs typically requires human intervention?",
-              "options": [
-                "They can't handle responsive design",
-                "They don't work on mobile",
-                "They require manual polish for color contrast and spacing",
-                "They can't implement animations"
-              ],
-              "correctAnswer": 2,
-              "explanation": "While AI tools like Lovable can build impressive UIs, they typically need human polish for details like color contrast and spacing to achieve a truly professional finish."
-            },
-            {
-              "id": "1-a2-4",
-              "question": "Which development process typically remains primarily the developer's responsibility even when vibe coding?",
-              "options": [
-                "Writing HTML",
-                "Creating CSS styles",
-                "Debugging complex issues",
-                "Setting up project structure"
-              ],
-              "correctAnswer": 2,
-              "explanation": "Debugging remains mostly the developer's responsibility. Once things get weird, AI often starts guessing, and it's frequently faster to fix issues manually than go back and forth with AI."
-            },
-            {
-              "id": "1-a2-5",
-              "question": "What bizarre behavior might you occasionally encounter when using AI coding tools?",
-              "options": [
-                "The AI might spontaneously try to build unrelated features",
-                "The AI never produces unexpected results",
-                "The AI will only write in a specific programming language",
-                "The AI will refuse to generate certain types of code"
-              ],
-              "correctAnswer": 0,
-              "explanation": "AI tools can occasionally exhibit bizarre behavior, like spontaneously trying to build completely unrelated features (such as a GBA emulator in the middle of backend logic). This unpredictability requires human oversight."
-            }
-          ]
-        }
-      },
-      {
-        "title": "AI Limitations & Context Management",
-        "quiz": {
-          "title": "Advanced Topic: AI Limitations & Context Management",
-          "questions": [
-            {
-              "id": "1-a3-1",
-              "question": "What is one of the biggest limitations of AI in project development?",
-              "options": [
-                "AI is too slow for complex projects",
-                "AI writes code in outdated languages",
-                "AI struggles to see the big picture and connect components meaningfully",
-                "AI can't generate code for certain platforms"
-              ],
-              "correctAnswer": 2,
-              "explanation": "AI excels at small, isolated tasks but struggles to connect them meaningfully into a cohesive system. It doesn't hold the full vision of a project, which is why human architects remain essential."
-            },
-            {
-              "id": "1-a3-2",
-              "question": "What common problem occurs with AI's memory during extended development sessions?",
-              "options": [
-                "AI speeds up as it learns your project",
-                "AI forgets previous decisions and may rewrite things back to conventional approaches",
-                "AI becomes more creative over time",
-                "AI gets stuck in recursive loops"
-              ],
-              "correctAnswer": 1,
-              "explanation": "Context is fragile with AI. It frequently forgets previous decisions, requiring constant reminders of prior choices, especially for non-standard approaches. Otherwise, it tends to revert to conventional implementations."
-            },
-            {
-              "id": "1-a3-3",
-              "question": "When AI generates code that already exists in your project, what's likely happening?",
-              "options": [
-                "The AI is trying to improve your existing code",
-                "The AI doesn't realize it's already solved that particular problem before",
-                "The AI thinks your existing code is incorrect",
-                "Your prompt was too vague"
-              ],
-              "correctAnswer": 1,
-              "explanation": "AI often doesn't realize when it's already solved a particular problem, leading to redundant implementations. It tends to repeatedly rewrite functions that already exist because it lacks persistent awareness of the entire codebase."
-            },
-            {
-              "id": "1-a3-4",
-              "question": "What's the BEST approach when AI starts generating completely off-topic or bizarre code?",
-              "options": [
-                "Let it continue to see where it goes",
-                "Redirect it immediately and provide clearer context about the current task",
-                "Switch to a different AI tool",
-                "Incorporate the bizarre code as it might be innovative"
-              ],
-              "correctAnswer": 1,
-              "explanation": "AI can occasionally go completely off-track (like building a GBA emulator in the middle of backend logic). The best approach is to immediately redirect it and provide clearer context about the current task."
-            },
-            {
-              "id": "1-a3-5",
-              "question": "Why might AI-generated copy/text content be problematic for your project?",
-              "options": [
-                "It uses too many technical terms",
-                "It's always too informal in tone",
-                "It might invent imaginary features or change product details like pricing",
-                "It can't generate text longer than a few paragraphs"
-              ],
-              "correctAnswer": 2,
-              "explanation": "AI copywriting can go off-script, inventing imaginary features or spontaneously changing product details. This requires careful human review to prevent misleading information from reaching users."
+              "explanation": "Different AI models have distinct strengths—some excel at UI generation, others at complex logic, and others at planning or security analysis. Using specialized tools for different tasks creates a more powerful workflow."
             }
           ]
         }
@@ -490,204 +357,339 @@
       {
         "title": "Security & Quality Control",
         "quiz": {
-          "title": "Advanced Topic: Security & Quality Control",
+          "title": "Advanced Topic: Security Essentials",
+          "questions": [
+            {
+              "id": "1-a2-1",
+              "question": "Which security vulnerability is characterized by using form/URL input directly without validation?",
+              "options": [
+                "Leaky Errors",
+                "Weak Authorization",
+                "Trusting Client Data",
+                "No Ownership Checks"
+              ],
+              "correctAnswer": 2,
+              "explanation": "Trusting Client Data is a common security vulnerability where input from forms or URLs is used directly without proper validation or sanitization. Always validate and sanitize on the server and escape output."
+            },
+            {
+              "id": "1-a2-2",
+              "question": "What is IDOR in the context of web security?",
+              "options": [
+                "Interactive Document Object Rendering",
+                "Insecure Direct Object Reference - allowing access to others' data via predictable IDs",
+                "Internal Database Operation Reconciliation",
+                "Integrated Development Object Resolution"
+              ],
+              "correctAnswer": 1,
+              "explanation": "IDOR (Insecure Direct Object Reference) is when a user can access or edit another user's data via predictable IDs without proper authorization checks, a common issue in AI-generated code that doesn't verify resource ownership."
+            },
+            {
+              "id": "1-a2-3",
+              "question": "Which security practice is recommended for database-level protection?",
+              "options": [
+                "Only implementing checks in the application code",
+                "Using plain-text passwords with strong encryption",
+                "Defining data access rules directly in the database (e.g., Row-Level Security)",
+                "Storing sensitive data in localStorage"
+              ],
+              "correctAnswer": 2,
+              "explanation": "Define data access rules directly in your database using features like Row-Level Security (RLS). This provides an additional security layer beyond application code and protects data even if application-level checks are bypassed."
+            },
+            {
+              "id": "1-a2-4",
+              "question": "What is the proper way to handle secrets like API keys in a frontend application?",
+              "options": [
+                "Store them in environment variables that are only accessible server-side",
+                "Encrypt them and include them in client-side code",
+                "Store them in localStorage for persistence",
+                "Hardcode them in the application for fastest access"
+              ],
+              "correctAnswer": 0,
+              "explanation": "API keys and credentials should never be in client-side code. Keep secrets server-side only using environment variables, and ensure your .env file is in .gitignore to prevent accidental exposure."
+            },
+            {
+              "id": "1-a2-5",
+              "question": "What is the recommended practice for error handling from a security perspective?",
+              "options": [
+                "Show detailed stack traces to help users report bugs",
+                "Log all errors with user information for tracking",
+                "Show generic error messages to users while logging details for developers",
+                "Disable all error reporting in production"
+              ],
+              "correctAnswer": 2,
+              "explanation": "From a security perspective, show generic error messages to users to avoid revealing implementation details, while still logging detailed information for developers to troubleshoot issues."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Advanced Prompt Engineering",
+        "quiz": {
+          "title": "Advanced Topic: Prompt Engineering",
+          "questions": [
+            {
+              "id": "1-a3-1",
+              "question": "What technique can help prevent AI tools from making unwanted changes to your code?",
+              "options": [
+                "Writing extremely long prompts",
+                "Including explicit instructions like 'do not change anything I did not ask for'",
+                "Using technical jargon in every prompt",
+                "Avoiding any specific instructions"
+              ],
+              "correctAnswer": 1,
+              "explanation": "Being explicit about boundaries helps prevent AI tools from making unwanted changes. Including clear instructions like 'do not change anything I did not ask for' helps maintain control over what the AI modifies."
+            },
+            {
+              "id": "1-a3-2",
+              "question": "When crafting prompts for complex features, what approach yields the best results?",
+              "options": [
+                "Using technical jargon to impress the AI",
+                "Being as concise as possible",
+                "Being detailed and specific, leaving no room for the AI to guess",
+                "Using abstract descriptions to allow creative freedom"
+              ],
+              "correctAnswer": 2,
+              "explanation": "Detailed, specific prompts that leave no room for guesswork produce the best results. Vague prompts lead to inconsistent outputs, while overly detailed prompts help the AI understand exactly what you need."
+            },
+            {
+              "id": "1-a3-3",
+              "question": "What is a recommended approach for creating better prompts for complex features?",
+              "options": [
+                "Always write them from scratch",
+                "Use Gemini to help craft detailed versions of your prompts",
+                "Keep them as short as possible",
+                "Focus only on technical aspects"
+              ],
+              "correctAnswer": 1,
+              "explanation": "Using tools like Gemini to help craft detailed versions of your prompts can significantly improve their quality. This 'prompting the prompt' approach helps create comprehensive instructions that lead to better code generation."
+            },
+            {
+              "id": "1-a3-4",
+              "question": "What information should you include when starting a new chat after the context window is full?",
+              "options": [
+                "Your entire project requirements document",
+                "A brief description of the feature you're working on and relevant files",
+                "Your company's business model",
+                "Personal information to personalize the experience"
+              ],
+              "correctAnswer": 1,
+              "explanation": "When starting a new chat, provide a brief description of the feature you're working on and mention the relevant files. This gives the AI enough context without overwhelming it with unnecessary information."
+            },
+            {
+              "id": "1-a3-5",
+              "question": "Which approach is most effective when the AI produces incorrect or unexpected code?",
+              "options": [
+                "Accept the code and try to work around the issues",
+                "Immediately switch to manual coding",
+                "Provide specific feedback about what's wrong and request corrections",
+                "Start a completely new project"
+              ],
+              "correctAnswer": 2,
+              "explanation": "When AI produces incorrect code, providing specific feedback about what's wrong and requesting corrections is most effective. This iterative refinement helps the AI understand your requirements better."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Debugging & Error Resolution",
+        "quiz": {
+          "title": "Advanced Topic: Debugging Strategies",
           "questions": [
             {
               "id": "1-a4-1",
-              "question": "What's the BIGGEST security issue with AI-generated code?",
+              "question": "What is the recommended approach when facing persistent errors in AI-generated code?",
               "options": [
-                "It always contains backdoors",
-                "It's not secure by default and lacks consideration of edge cases or malicious scenarios",
-                "It can't implement authentication systems",
-                "It's written in outdated languages with known vulnerabilities"
+                "Keep trying the same approach until it works",
+                "Use a systematic debugging approach with logging and code review",
+                "Always revert to manual coding immediately",
+                "Deploy the code anyway and fix issues in production"
               ],
               "correctAnswer": 1,
-              "explanation": "AI gets you functional code fast, but securing it against hacks or vulnerabilities is still on you. AI doesn't naturally think through edge cases or malicious scenarios, requiring human oversight to build safe applications."
+              "explanation": "A systematic approach to debugging with strategic logging and reviewing potential error sources is more effective than repeated attempts with the same approach or immediately abandoning AI assistance."
             },
             {
               "id": "1-a4-2",
-              "question": "In a vibe-coded project, who is responsible for ensuring code security?",
+              "question": "What is the '3 attempts' guideline for handling errors with AI tools?",
               "options": [
-                "The AI should handle all security concerns",
-                "The human developer must add security layers and provide oversight",
-                "Security isn't a concern for prototype projects",
-                "A separate security AI should review the code"
+                "Always give the AI exactly 3 chances to fix any bug",
+                "If the AI can't solve an error after about 3 attempts, refine your prompt or approach",
+                "Test each feature exactly 3 times before deployment",
+                "Use 3 different AI tools for each problem"
               ],
               "correctAnswer": 1,
-              "explanation": "The human developer must add security layers and provide oversight. AI isn't thinking about who might try to break your application - protecting against vulnerabilities requires human judgment."
+              "explanation": "If the AI has made multiple attempts (around 3) to fix an error without success, it's likely stuck in a loop. At this point, it's more efficient to step back, refine your approach, and try a different angle rather than continuing with the same strategy."
             },
             {
               "id": "1-a4-3",
-              "question": "What development skill remains essential even when using AI for 90% of your coding?",
+              "question": "What debugging technique is particularly effective with AI coding assistants?",
               "options": [
-                "Fast typing speed",
-                "Memorizing programming syntax",
-                "Solid debugging skills",
-                "Graphic design abilities"
+                "Waiting for the AI to figure out the problem on its own",
+                "Strategic logging and providing the output back to the AI",
+                "Rewriting the entire codebase",
+                "Deployment to production to test with real users"
               ],
-              "correctAnswer": 2,
-              "explanation": "Debugging skills remain essential. To vibe code efficiently, you still need solid coding fundamentals because you'll inevitably hit issues that require deeper understanding to resolve."
+              "correctAnswer": 1,
+              "explanation": "Strategic console logging at key points helps identify where issues occur. Providing these logs back to the AI gives it concrete information about the code's behavior, making it much more effective at pinpointing and fixing problems."
             },
             {
               "id": "1-a4-4",
-              "question": "What effect does AI have on development speed for solo developers?",
+              "question": "What should you do when you notice the AI is producing increasingly complex or convoluted solutions?",
               "options": [
-                "It slightly improves speed but not significantly",
-                "It dramatically increases development speed, especially for repetitive tasks",
-                "It slows down development due to prompt engineering time",
-                "It has no measurable impact on development time"
+                "Accept the complexity as necessary",
+                "Push for simplicity and ask the AI to explain its approach",
+                "Always choose the most complex solution",
+                "Stop using AI tools entirely"
               ],
               "correctAnswer": 1,
-              "explanation": "AI significantly speeds up development, especially for solo developers. The speed boost is substantial for handling repetitive or standardized tasks, allowing developers to go from zero to working product in record time."
+              "explanation": "AI tools often produce overly complex 'textbook-perfect' solutions. Push back and explicitly ask for simpler approaches, and always ask the AI to explain its solution so you understand what it's doing and why."
             },
             {
               "id": "1-a4-5",
-              "question": "Which is a strategic disadvantage of relying too heavily on AI for coding?",
+              "question": "What is 'vibe debugging' and why should it be avoided?",
               "options": [
-                "The code will run more slowly",
-                "The resulting application will look too generic",
-                "You might build technical debt through poor architecture if you don't maintain the big picture",
-                "AI coding is more expensive than manual coding"
+                "Using AI to write unit tests - it's highly recommended",
+                "Asking the AI to debug without understanding the issue yourself - it should be avoided",
+                "A special debugging mode in modern AI tools",
+                "Collaborative debugging with multiple developers"
               ],
-              "correctAnswer": 2,
-              "explanation": "Without maintaining architectural vision, you risk building technical debt through disconnected components. AI excels at individual tasks but struggles to create coherent systems without human guidance."
+              "correctAnswer": 1,
+              "explanation": "'Vibe debugging' refers to blindly asking AI to fix bugs without trying to understand the issue yourself. This often leads to endless loops of problems. Use AI as an assistant, not a replacement for critical thinking in debugging."
             }
           ]
         }
       },
       {
-        "title": "Scenario-Based Assessment",
-        "description": "Building a Community Recipe Sharing Platform",
+        "title": "Project Management & Scaling",
         "quiz": {
-          "title": "Advanced Topic: Scenario-Based Assessment",
+          "title": "Advanced Topic: Project Management",
           "questions": [
             {
               "id": "1-a5-1",
-              "question": "Which architectural decision would be MOST difficult to change later?",
+              "question": "What is the biggest limitation of AI in project development according to experienced developers?",
               "options": [
-                "The color scheme and typography",
-                "The search algorithm for finding recipes",
-                "The fundamental data model for recipes and user relationships",
-                "The layout of the recipe display page"
+                "Speed limitations",
+                "Language constraints",
+                "Inability to see the big picture and connect components meaningfully",
+                "Cost of API calls"
               ],
               "correctAnswer": 2,
-              "explanation": "Data models that define relationships between entities (users, recipes, ingredients, etc.) are fundamental to the application and extremely disruptive to change once content exists in the system."
+              "explanation": "AI excels at isolated tasks but struggles to connect them meaningfully into a cohesive system. It doesn't maintain the full vision of a project, which is why human architects remain essential for the big picture."
             },
             {
               "id": "1-a5-2",
-              "question": "The AI generates a complex recipe rating system. What's the BEST approach before implementing it?",
+              "question": "What role should human developers play when using AI tools for development?",
               "options": [
-                "Implement it exactly as provided since the AI knows best",
-                "Ask the AI to explain the code, then push for a simpler solution if it seems overly complex",
-                "Completely rewrite it manually",
-                "Pick a different AI to get a second opinion"
+                "Code generation",
+                "Project architect who maintains the big picture vision",
+                "Documentation writer",
+                "UI designer"
               ],
               "correctAnswer": 1,
-              "explanation": "AI often produces 'textbook-perfect' solutions that are more complex than necessary. Good vibe coding practice is to push for simplicity and understand the code before accepting it."
+              "explanation": "Humans should serve as project architects who maintain the big picture vision, make key architectural decisions, and connect AI-generated components meaningfully - tasks that AI still struggles with."
             },
             {
               "id": "1-a5-3",
-              "question": "You notice style inconsistencies across different AI-generated components. What's the BEST solution?",
+              "question": "Which aspect of development typically remains primarily the developer's responsibility even in AI-assisted development?",
               "options": [
-                "Accept the inconsistencies as a normal part of development",
-                "Set up linting rules and formatter tools, and train your AI prompts to follow a style guide",
-                "Manually fix each style issue as you find it",
-                "Use a different AI for each component"
+                "Writing HTML templates",
+                "Creating CSS styles",
+                "Debugging complex issues and system architecture",
+                "Writing basic CRUD operations"
               ],
-              "correctAnswer": 1,
-              "explanation": "Style and structure inconsistencies are common in AI-generated code. Setting up linting rules and formatter tools, plus training your prompts, creates a systematic solution to maintain consistency."
+              "correctAnswer": 2,
+              "explanation": "Complex debugging and system architecture remain primarily the developer's responsibility. AI tools may help with isolated components but struggle with complex system issues that require deep understanding."
             },
             {
               "id": "1-a5-4",
-              "question": "The AI has generated user authentication code. What MUST you do before deploying it?",
+              "question": "How should version control be handled in AI-assisted projects?",
               "options": [
-                "Run it through security testing tools and manually review for vulnerabilities",
-                "Trust that it's secure since it came from an advanced AI",
-                "Compare it to authentication code on popular forums",
-                "Deploy it quickly to test with real users"
+                "Avoid version control since AI might modify previous code",
+                "Keep separate repositories for AI-generated and human-written code",
+                "Use standard version control with clear commit messages about functionality",
+                "Only commit code after it's been completely rewritten by humans"
               ],
-              "correctAnswer": 0,
-              "explanation": "Security oversights are common in AI-generated code. Always threat-model new code sections, use security tools, and manually review authentication code for vulnerabilities."
+              "correctAnswer": 2,
+              "explanation": "Use standard version control practices with clear commit messages about what the code does, regardless of whether it was AI-generated or human-written. Focus on functionality rather than source in commit messages."
             },
             {
               "id": "1-a5-5",
-              "question": "After generating several components with AI, you notice the code is getting disorganized. What's the BEST approach to maintain a quality codebase?",
+              "question": "What is a strategic disadvantage of relying too heavily on AI for coding without proper oversight?",
               "options": [
-                "Start the project over with better prompts",
-                "Implement automated code quality checks, review every line, and invest in understanding the fundamental patterns",
-                "Manually fix issues as they arise without a systematic approach",
-                "Accept some disorganization as the cost of using AI"
+                "The code will run too slowly",
+                "It's more expensive than manual coding",
+                "You might build technical debt through poor architecture",
+                "AI-generated code always has license issues"
               ],
-              "correctAnswer": 1,
-              "explanation": "To maintain code quality while vibe coding, you need a framework of automated checks, manual review, and strong fundamentals that help you identify when the AI's output needs improvement."
+              "correctAnswer": 2,
+              "explanation": "Without maintaining architectural vision and proper oversight, AI-assisted development can lead to technical debt through disconnected components. Human architecture and oversight remain essential."
             }
           ]
         }
       },
       {
-        "title": "Final Assessment: Framework for Professional Vibe Coding",
+        "title": "Final Assessment: Holistic Vibe Coding Strategy",
         "quiz": {
-          "title": "Advanced Topic: Final Assessment",
+          "title": "Advanced Topic: Holistic Strategy",
           "questions": [
             {
               "id": "1-a6-1",
-              "question": "Speed vs Quality Balance",
+              "question": "Which combination of practices creates the strongest foundation for successful AI-assisted development?",
               "options": [
-                "Always prioritize speed over quality since AI code is perfect",
-                "Balance rapid development with manual security reviews and architecture planning",
-                "Avoid using AI to ensure maximum quality",
-                "Only use AI for small projects where quality doesn't matter"
+                "Using the newest AI models and focusing solely on prompt engineering",
+                "Clear vision, planned UI/UX, version control, and breaking complex features into manageable parts",
+                "Maximizing AI usage for every part of development without human oversight",
+                "Using AI only for simple tasks and coding everything important manually"
               ],
               "correctAnswer": 1,
-              "explanation": "The real power of vibe coding comes from balancing its incredible speed benefits with necessary human oversight for security, architecture, and edge cases."
+              "explanation": "Successful vibe coding requires a holistic approach: clear vision and UI/UX planning provide direction, version control provides safety, and breaking features into parts allows for focused, high-quality AI output."
             },
             {
               "id": "1-a6-2",
-              "question": "Tool Specialization",
+              "question": "What represents the ideal balance of AI and human involvement in development?",
               "options": [
-                "Use a single AI for all tasks to maintain consistency",
-                "Strategically use different AI tools for their strengths (e.g., Lovable for UI, Cursor for backend)",
-                "Manually code everything and only use AI for ideas",
-                "Switch randomly between AI tools to see which gives better results"
+                "AI handles everything while humans only review the final product",
+                "Humans maintain architecture and oversight while AI assists with implementation",
+                "AI handles planning while humans do all coding",
+                "Humans and AI work completely independently on different parts"
               ],
               "correctAnswer": 1,
-              "explanation": "Different AI models have distinct strengths. Using ChatGPT, Claude, and Gemini strategically for different tasks, or specialized tools like Lovable for UI and Cursor for backend, creates a much more powerful workflow."
+              "explanation": "The ideal balance is for humans to maintain architectural vision, make key decisions, and provide oversight, while AI assists with implementation details, code generation, and solving specific problems within that framework."
             },
             {
               "id": "1-a6-3",
-              "question": "Context Management",
+              "question": "Which approach to AI tool usage maximizes productivity while maintaining code quality?",
               "options": [
-                "Start fresh with each coding session",
-                "Keep detailed documentation of all AI interactions",
-                "Continuously refresh the AI's memory with project context and previous decisions",
-                "Let the AI figure out the context on its own"
+                "Using a single AI tool for all tasks",
+                "Strategically using specialized AI tools for their strengths with consistent patterns",
+                "Randomly trying different AI tools until one works",
+                "Minimizing AI usage to occasional assistance only"
               ],
-              "correctAnswer": 2,
-              "explanation": "AI forgets previous decisions frequently. Successful vibe coding requires constantly reminding the AI of previous decisions and maintaining project context to prevent regression to conventional approaches."
+              "correctAnswer": 1,
+              "explanation": "Productivity and quality come from strategically using different AI tools for their strengths (planning, UI, logic, security) while maintaining consistent patterns through shared guidelines like Cursor Rules."
             },
             {
               "id": "1-a6-4",
-              "question": "Human Architecture",
+              "question": "What best describes a mature approach to handling AI limitations?",
               "options": [
-                "Let the AI design the entire system architecture",
-                "Maintain the big picture vision yourself while letting AI handle implementation details",
-                "Build small disconnected components and connect them later",
-                "Avoid planning and let the architecture emerge organically"
+                "Expecting AI to eventually solve all issues without human input",
+                "Recognizing AI strengths and limitations, and designing workflows that account for them",
+                "Avoiding AI usage for any critical features",
+                "Switching AI tools whenever a limitation is encountered"
               ],
               "correctAnswer": 1,
-              "explanation": "AI excels at small tasks but struggles with the big picture. Humans must maintain the architectural vision and connect AI-generated components meaningfully to create coherent systems."
+              "explanation": "A mature approach recognizes both AI strengths and limitations, designing workflows that leverage AI for what it does well while accounting for areas where human judgment and oversight remain necessary."
             },
             {
               "id": "1-a6-5",
-              "question": "Quality Control",
+              "question": "What is the ultimate goal of vibe coding as a development approach?",
               "options": [
-                "Trust that AI-generated code is always correct",
-                "Implement robust testing, manually review security aspects, and handle debugging yourself",
-                "Have another AI review the first AI's code",
-                "Only test the code if it doesn't work immediately"
+                "Eliminating the need for human developers",
+                "Creating technically impressive but impractical applications",
+                "Accelerating development while maintaining quality through human-AI collaboration",
+                "Minimizing development costs regardless of quality"
               ],
-              "correctAnswer": 1,
-              "explanation": "Successful vibe coding requires implementing proper testing, manually review security-critical components, and being prepared to debug issues yourself when AI starts guessing at solutions."
+              "correctAnswer": 2,
+              "explanation": "The goal of vibe coding is to accelerate development and make it more accessible while maintaining quality through effective human-AI collaboration, not to eliminate human involvement or compromise on quality standards."
             }
           ]
         }
