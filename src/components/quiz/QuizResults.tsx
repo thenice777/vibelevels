@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { RotateCw } from "lucide-react";
 
 interface QuizResultsProps {
   score: number;
@@ -17,22 +19,6 @@ const cardStyle: React.CSSProperties = {
   maxWidth: 580,
   boxShadow: "0 3px 12px rgba(0,0,0,0.25)",
   border: "1px solid rgba(255,255,255,0.05)",
-};
-
-const restartBtnStyle: React.CSSProperties = {
-  marginTop: 28,
-  width: "100%",
-  padding: "14px 0",
-  borderRadius: 8,
-  background: "var(--quiz-restart-btn-bg, #23242d)",
-  color: "var(--quiz-restart-btn-text, #6be672)",
-  border: "2px solid var(--quiz-restart-btn-border, #6be672)",
-  fontWeight: 700,
-  fontSize: 16,
-  cursor: "pointer",
-  letterSpacing: 0.5,
-  boxShadow: "0 2px 8px rgba(107, 230, 114, 0.2)",
-  transition: "all 0.2s ease",
 };
 
 const feedbackMessages = [
@@ -97,12 +83,15 @@ const QuizResults: React.FC<QuizResultsProps> = ({ score, totalQuestions, title,
         </ul>
       </div>
       
-      <button 
-        style={restartBtnStyle} 
+      {/* Replace the old button with shadcn/ui Button component */}
+      <Button 
+        variant="secondary"
+        className="w-full mt-7 font-bold text-base py-6 bg-secondary/80 hover:bg-secondary text-secondary-foreground border-2 border-primary"
         onClick={onRestart}
       >
+        <RotateCw className="mr-2" />
         Take Quiz Again
-      </button>
+      </Button>
     </div>
   );
 };
