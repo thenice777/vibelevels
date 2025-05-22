@@ -146,9 +146,9 @@ const Index = () => {
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
-              onClick={() => navigate('/courses')}
+              onClick={() => navigate('/unit1')}
             >
-              get started now <ArrowRight className="ml-1 h-4 w-4" />
+              start learning now <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </div>
         </div>
