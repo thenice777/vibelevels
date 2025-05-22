@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 export type Theme = 'light' | 'dark';
@@ -6,7 +7,7 @@ export function useTheme() {
   // Initialize theme state from localStorage or system preference
   const [theme, setTheme] = useState<Theme>(() => {
     // Only run in browser environment
-    if (typeof window === "undefined") return 'light';
+    if (typeof window === "undefined") return 'dark';
     
     try {
       // Check localStorage first
@@ -15,16 +16,14 @@ export function useTheme() {
         return savedTheme;
       }
       
-      // Fall back to system preference
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
+      // Default to dark theme instead of checking system preference
+      return 'dark';
     } catch (error) {
       console.error("Error initializing theme:", error);
     }
     
-    // Default to light theme if all else fails
-    return 'light';
+    // Default to dark theme if all else fails
+    return 'dark';
   });
 
   // Apply theme to document and store in localStorage
