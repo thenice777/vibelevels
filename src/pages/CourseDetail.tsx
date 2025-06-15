@@ -1,5 +1,5 @@
-
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { CourseContent } from "@/components/CourseContent";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
@@ -104,8 +104,39 @@ const CourseDetail = () => {
     ],
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": courseData.title,
+    "description": courseData.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Vibelevels",
+      "url": "https://vibelevels.com"
+    },
+    "educationalLevel": "Beginner",
+    "teaches": ["Web Development", "HTML", "CSS", "JavaScript", "Debugging"],
+    "courseMode": "online",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "instructor": {
+        "@type": "Organization",
+        "name": "Vibelevels"
+      }
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title={`${courseData.title} Course | Learn Web Development Best Practices`}
+        description={`${courseData.description} Master common web development pitfalls with hands-on examples and expert guidance.`}
+        keywords="web development course, web dev mistakes, HTML errors, CSS pitfalls, JavaScript debugging, web development best practices"
+        canonical={`https://vibelevels.com/courses/${courseSlug}`}
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>

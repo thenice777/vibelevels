@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Briefcase, ArrowRight, Star, Home } from "lucide-react";
@@ -84,8 +85,33 @@ const Projects = () => {
     }
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Earn While You Learn - AI Coding Projects",
+    "description": "Get paid to build real-world projects while learning vibe coding and AI-assisted development",
+    "url": "https://vibelevels.com/projects",
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Paid Learning Projects",
+      "description": "Real-world coding projects that pay while you learn",
+      "provider": {
+        "@type": "Organization",
+        "name": "Vibelevels"
+      }
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Earn While Learning AI Coding | Paid Vibe Coding Projects"
+        description="Get paid to build real-world projects while learning vibe coding and AI-assisted development. Apply for beginner to advanced coding projects with mentorship and compensation."
+        keywords="earn coding, paid coding projects, learn while earning, vibe coding jobs, AI development projects, freelance coding, coding mentorship"
+        canonical="https://vibelevels.com/projects"
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4 py-6">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>

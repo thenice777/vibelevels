@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -20,8 +21,40 @@ const Index = () => {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Vibelevels",
+    "url": "https://vibelevels.com",
+    "logo": "https://vibelevels.com/vl-favicon.svg",
+    "description": "Master vibe coding and AI-assisted development with hands-on courses, real projects, and expert mentorship.",
+    "educationalLevel": "Beginner to Advanced",
+    "teaches": ["AI-Assisted Coding", "Vibe Coding", "Web Development", "AI Programming", "ChatGPT Coding", "GitHub Copilot"],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Vibe Coding Certificate"
+    },
+    "offers": {
+      "@type": "Course",
+      "name": "Vibe Coding Mastery",
+      "description": "Comprehensive course on AI-assisted development and vibe coding techniques",
+      "provider": {
+        "@type": "Organization",
+        "name": "Vibelevels"
+      }
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Vibelevels - Master AI-Assisted Coding | Learn Vibe Coding Fast"
+        description="Master vibe coding with AI tools like ChatGPT, Claude & GitHub Copilot. Learn AI-assisted development, build real projects, and earn while you code. Start your AI coding journey today!"
+        keywords="vibe coding, AI coding, AI-assisted development, ChatGPT coding, GitHub Copilot, Claude AI, learn to code with AI, AI programming tutorial, web development AI, coding with artificial intelligence"
+        canonical="https://vibelevels.com"
+        structuredData={structuredData}
+      />
+      
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Background elements */}

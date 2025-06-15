@@ -1,5 +1,5 @@
-
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home, Clock } from "lucide-react";
@@ -59,8 +59,32 @@ const FAQ = () => {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Vibe Coding FAQ",
+    "description": "Solutions to common AI coding problems and vibe coding troubleshooting guide",
+    "mainEntity": faqCategories.map(category => ({
+      "@type": "Question",
+      "name": category.title,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": category.description,
+        "url": `https://vibelevels.com/faq/${category.slug}`
+      }
+    }))
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Vibe Coding FAQ | AI Coding Problems & Solutions"
+        description="Solve common AI coding problems with our comprehensive FAQ. Get solutions for ChatGPT coding issues, GitHub Copilot troubles, and vibe coding challenges."
+        keywords="vibe coding FAQ, AI coding problems, ChatGPT coding issues, GitHub Copilot help, AI development troubleshooting, prompt engineering problems"
+        canonical="https://vibelevels.com/faq"
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4 py-12">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>

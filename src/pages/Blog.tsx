@@ -1,5 +1,5 @@
-
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
@@ -91,8 +91,40 @@ const Blog = () => {
     return colorMap[colorName] || "bg-primary";
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Vibelevels Blog",
+    "description": "Expert insights on AI-assisted development, vibe coding techniques, and modern web development practices",
+    "url": "https://vibelevels.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vibelevels",
+      "url": "https://vibelevels.com"
+    },
+    "blogPost": allPosts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://vibelevels.com/blog/${post.slug}`,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "Vibelevels"
+      }
+    }))
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Vibe Coding Blog | AI Development Tips & Tutorials"
+        description="Expert insights on AI-assisted development, vibe coding techniques, prompt engineering, and modern web development. Learn from the latest AI coding trends and best practices."
+        keywords="vibe coding blog, AI development blog, AI coding tips, prompt engineering, ChatGPT development, GitHub Copilot tutorials, AI programming insights"
+        canonical="https://vibelevels.com/blog"
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>

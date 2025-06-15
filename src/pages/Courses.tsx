@@ -1,5 +1,5 @@
-
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 const Courses = () => {
   const navigate = useNavigate();
   
-  // Course categories with their respective courses
   const courseCategories = [
     {
       title: "beginner friendly",
@@ -52,11 +51,45 @@ const Courses = () => {
     },
   ];
 
-  // User stats (medals count)
   const userMedals = 10;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Vibe Coding Courses",
+    "description": "Comprehensive AI-assisted coding courses covering web development, project architecture, and AI development tools",
+    "provider": {
+      "@type": "Organization",
+      "name": "Vibelevels",
+      "url": "https://vibelevels.com"
+    },
+    "educationalLevel": "Beginner to Advanced",
+    "teaches": ["Vibe Coding", "AI-Assisted Development", "Web Development", "Project Architecture"],
+    "courseMode": "online",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "name": "Web Dev Pitfalls",
+        "description": "Learn common mistakes to avoid in web development projects"
+      },
+      {
+        "@type": "CourseInstance", 
+        "name": "Project Architecture",
+        "description": "Master the art of structuring web projects from the ground up"
+      }
+    ]
+  };
 
   return (
     <Layout>
+      <SEO
+        title="AI Coding Courses | Learn Vibe Coding & AI-Assisted Development"
+        description="Master vibe coding with our comprehensive courses. Learn AI-assisted development, web dev best practices, project architecture, and AI development tools. Start coding with AI today!"
+        keywords="AI coding courses, vibe coding tutorial, AI-assisted development course, learn ChatGPT coding, GitHub Copilot training, AI programming course, web development with AI"
+        canonical="https://vibelevels.com/courses"
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>

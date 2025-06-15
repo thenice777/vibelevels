@@ -1,5 +1,5 @@
-
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -84,7 +84,6 @@ const BlogPost = () => {
     readTime: "8 min read"
   };
 
-  // Helper function to get category color class
   const getCategoryColorClass = (colorName: string): string => {
     const colorMap: Record<string, string> = {
       purple: "bg-primary",
@@ -96,8 +95,43 @@ const BlogPost = () => {
     return colorMap[colorName] || "bg-primary";
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": "Explore how AI tools are revolutionizing the software development workflow and what that means for the future of coding.",
+    "image": "https://vibelevels.com/og-image.png",
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vibelevels",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vibelevels.com/vl-favicon.svg"
+      }
+    },
+    "datePublished": "2025-04-20",
+    "dateModified": "2025-04-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://vibelevels.com/blog/${slug}`
+    }
+  };
+
   return (
     <Layout>
+      <SEO
+        title="The Future of AI-Assisted Development | Vibe Coding Blog"
+        description="Explore how AI tools like ChatGPT, GitHub Copilot, and Lovable are revolutionizing software development. Learn about the future of vibe coding and AI-assisted programming."
+        keywords="AI-assisted development, future of coding, vibe coding, ChatGPT development, GitHub Copilot, AI programming tools, software development AI"
+        canonical={`https://vibelevels.com/blog/${slug}`}
+        ogType="article"
+        structuredData={structuredData}
+      />
+      
       <div className="container mx-auto px-4">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
